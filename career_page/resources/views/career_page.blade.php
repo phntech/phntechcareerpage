@@ -47,7 +47,7 @@
 
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div">
                             <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid desktop_header_img" />
-                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid mobile_header_img" />
+                            <img src="{{ asset('img/header_img_mob.webp') }}" alt="header_img" class="img-fluid mobile_header_img" />
 
                         </div>
                     </div>
@@ -61,7 +61,7 @@
     <section class="Form_section">
         <div class="container-fluid">
             <div class="container">
-
+                <p class="apply_text">Apply</p>
                 <form action="#" method="#" id="enquiryForm">
                     @csrf
                     <div class="row">
@@ -130,7 +130,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" id="submit_btn" class="submit_btn" value="Submit">
+                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit">
                     </div>
 
 
