@@ -16,6 +16,7 @@
 
 <body>
 
+
     <!-- header section start -->
     <section class="Header_section">
         <div class="container-fluid">
@@ -27,20 +28,18 @@
                 <div class="header">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_details_div">
-                            <p class="career_title">#JOB</p>
+                            <p class="job_title">#JOB</p>
                             <p class="header_title">
-                                Get IT jobs in your city
+                                Get <span style="color:#3C50E0;"> IT jobs</span> in your city
                             </p>
                             <p class="header_subtitle">
                                 Explore exciting career opportunities at
                                 PHN Technology
                             </p>
-
-                            <button class="apply_btn btn">Apply Now</button>
                         </div>
 
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div">
-                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="header_img img-fluid" />
+                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid" />
                         </div>
                     </div>
                 </div>
@@ -58,70 +57,68 @@
                 @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" name="first_name">
-                            <label >First name*</label>
-                            <span name="first_name"></span>
+                            <input type="text" class="form-control" placeholder="First name*">
+                           
+                            
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control">
-                            <label for="last_name">Last name*</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control">
-                            <label for="wtsp_mob_no">WhatsApp mobile number*</label>
-                        </div>
-                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control">
-                            <label for="email">Email</label>
+                            <input type="text" class="form-control" placeholder="Last name*">
+
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                          <select class="form-control">
-                            <option value="state">State*</option>
-                            <option value="maharashtra">Maharashtra</option>
-                         </select>
+                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                        <select class="form-control">
-                            <option value="district">District*</option>
-                            <option value="sangli">Sangli</option>
-                         </select>
+                            <input type="text" class="form-control" placeholder="Email">
+
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                        <select class="form-control">
-                            <option value="taluka">Taluka*</option>
-                            <option value="walwa">Walwa</option>
-                         </select>
+                            <select class="form-control">
+                                <option value="state">State*</option>
+                                <option value="maharashtra">Maharashtra</option>
+                            </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                        <select class="form-control">
-                            <option value="high_qualification">Highest qualification*</option>
-                            <option value="bca">BCA</option>
-                         </select>
+                            <select class="form-control">
+                                <option value="district">District*</option>
+                                <option value="sangli">Sangli</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
+                            <select class="form-control">
+                                <option value="taluka">Taluka*</option>
+                                <option value="walwa">Walwa</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
+                            <select class="form-control">
+                                <option value="high_qualification">Highest qualification*</option>
+                                <option value="bca">BCA</option>
+                            </select>
                         </div>
                     </div>
                     <p class="captcha_title">Captcha</p>
                     <div class="row">
-                        <div class="col-sm-1 col-lg-1 col-md-1 col-1">
+                        <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
                             11
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
                             +
                         </div>
-                        <div class="col-sm-1 col-lg-1 col-md-1 col-1">
+                        <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
                             3
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
                             =
                         </div>
-                        <div class="col-sm-4 col-lg-4 col-md-4 col-4">
-                        <input type="text" class="form-control">
-                            <label for="addtion">Enter the addition here</label>
+                        <div class="col-sm-8 col-lg-4 col-md-8 col-8">
+                            <input type="text" class="form-control  mt-0" placeholder="Enter addition">
                         </div>
                     </div>
 
