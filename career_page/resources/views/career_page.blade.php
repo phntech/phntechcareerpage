@@ -62,11 +62,12 @@
         <div class="container-fluid">
             <div class="container">
                 <p class="apply_text">Apply</p>
-                <form action="#" method="#" id="enquiryForm">
+         
+                <form action="application" method="POST" id="enquiryForm">
                     @csrf
-                    <div class="row">
+                    <div class="row">first_name
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name">
+                            <input type="text" class="form-control" placeholder="First name*" name="" id="first_name">
 
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
@@ -85,28 +86,28 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="state_dropdown" id="state_dropdown">
-                                <option value="state">State*</option>
+                            <select class="form-control" name="state" id="state">
+                                <option value="">State*</option>
                                 <option value="maharashtra">Maharashtra</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="district_dropdown" id="district_dropdown">
-                                <option value="district">District*</option>
+                            <select class="form-control" name="district" id="district_dropdown">
+                                <option value="">District*</option>
                                 <option value="sangli">Sangli</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="taluka_dropdown" id="taluka_dropdown">
-                                <option value="taluka">Taluka*</option>
+                            <select class="form-control" name="taluka" id="taluka_dropdown">
+                                <option value="">Taluka*</option>
                                 <option value="walwa">Walwa</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="qualification_dropdown" id="qualification_dropdown">
-                                <option value="high_qualification">Highest qualification*</option>
+                            <select class="form-control" name="qualification" id="qualification_dropdown">
+                                <option value="">Highest qualification*</option>
                                 <option value="bca">BCA</option>
                             </select>
                         </div>
