@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::get('/career_page', function () {
     return view('career_page');
 });
+Route::get('/form', function () {
+    return view('formfield');
+});

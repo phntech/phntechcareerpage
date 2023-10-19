@@ -9,7 +9,9 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/career_page.css') }}">
+    <script src="{{ asset('js/career.js') }}"></script>
 </head>
 
 <body>
@@ -52,11 +54,13 @@
         <div class="container-fluid">
             <div class="container">
 
-                <form action="">
+                <form action="#" method="#" id="enquiryForm">
+                @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control">
-                            <label for="first_name">First name*</label>
+                            <input type="text" class="form-control" name="first_name">
+                            <label >First name*</label>
+                            <span name="first_name"></span>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <input type="text" class="form-control">
@@ -121,7 +125,7 @@
                         </div>
                     </div>
 
-                    <button class="btn submit_btn">Submit</button>
+                    <input type="submit" id="submit_btn"  value="Submit"> 
                 </form>
             </div>
         </div>
