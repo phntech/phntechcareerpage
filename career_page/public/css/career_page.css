@@ -55,8 +55,21 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    margin-bottom: 0;
 }
-
+select {
+    -webkit-appearance: none;
+    background: transparent;
+    background-image: url("../img/dropdown_arrow.svg");
+    background-repeat: no-repeat;
+    background-position-x: 94%;
+    background-position-y: 20px;
+    margin-right: 24px;
+}
+.error {
+    color: red;
+    margin-top: 10px;
+}
 .captcha_title {
     color: #00005c;
     font-family: Poppins;
@@ -66,9 +79,7 @@ body {
     line-height: normal;
     margin-top: 32px;
 }
-form {
-    margin-top: 24px;
-}
+
 .form-control {
     border-radius: 4px;
     border: 1px solid #bdc0d7;
@@ -79,7 +90,9 @@ form {
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 150% */
+    line-height: 24px;
+    padding-left: 24px;
+    background-color: transparent;
 }
 .form-control:focus {
     color: #00005c;
@@ -138,11 +151,52 @@ select.form-control:not([size]):not([multiple]) {
 .mobile_data_list {
     display: none;
 }
-/* .header_img{
-    width: 130%;
-    height: 100vh;
-} */
+.desktop_header_img {
+    margin-top: -4rem;
+}
 
+.cancel_btn {
+    border-radius: 4px;
+    border: 1px solid #3c50e0;
+    color: #3c50e0;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: #fff;
+}
+.otp_submit_btn {
+    border-radius: 4px;
+    background: #3c50e0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    color: #fff;
+    line-height: normal;
+}
+.modal {
+    padding: 24px;
+}
+.verify_title {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: #00005c;
+}
+.verify_mob_no {
+    color: #7d7d7d;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.modal .form-control {
+    border-radius: 4px;
+    border: 1px solid #bdc0d7;
+}
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
     .header_details_div {
@@ -172,7 +226,21 @@ select.form-control:not([size]):not([multiple]) {
         line-height: normal;
         padding-inline-start: 0;
     }
-
+    .mobile_data_list li {
+        margin-left: 18px;
+    }
+    .apply_text {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        margin-top: 16px;
+    }
+    .number_div {
+        padding: 0 25px 0 22px;
+    }
+    .random_num {
+        margin-left: -5px;
+    }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -186,8 +254,32 @@ select.form-control:not([size]):not([multiple]) {
     .desktop_header_img {
         display: none;
     }
-    .job_title {
+    .job_title,
+    .header_subtitle {
         display: none;
+    }
+    .header_title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 34px; /* 141.667% */
+    }
+    .mobile_data_list {
+        display: inline;
+        color: #627193;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding-inline-start: 0;
+    }
+    .mobile_data_list li {
+        margin-left: 18px;
+    }
+    .apply_text {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        margin-top: 16px;
     }
 }
 
@@ -201,6 +293,34 @@ select.form-control:not([size]):not([multiple]) {
     }
     .desktop_header_img {
         display: none;
+    }
+    .job_title,
+    .header_subtitle {
+        display: none;
+    }
+    .header_title {
+        font-size: 56px;
+        font-weight: 700;
+        line-height: 34px;
+        margin-bottom: 2rem;
+    }
+    .mobile_data_list {
+        display: inline;
+        color: #627193;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding-inline-start: 0;
+        font-size: 16px;
+    }
+    .mobile_data_list li {
+        margin-left: 18px;
+    }
+    .apply_text {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        margin-top: 16px;
     }
 }
 
