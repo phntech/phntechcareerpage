@@ -24,3 +24,7 @@ Route::get('/form', function () {
 });
 
 Route::POST('application', [CareerController::class, 'submitApplication']);
+
+// Route::get('/send-otp', function(){
+   
+// });
