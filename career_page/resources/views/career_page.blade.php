@@ -16,7 +16,6 @@
 
 <body>
 
-
     <!-- header section start -->
     <section class="Header_section">
         <div class="container-fluid">
@@ -28,9 +27,9 @@
                 <div class="header">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_details_div">
-                            <p class="job_title">#JOB</p>
+
                             <p class="header_title">
-                                Get <span style="color:#3C50E0;"> IT jobs</span> in your city
+                                Get <span style="color:#3C50E0;  text-transform: uppercase;"> IT jobs</span> in your city
                             </p>
                             <ul class="mobile_data_list">
                                 <li>Any Graduate/12th Pass/Housewife can apply</li>
@@ -108,7 +107,14 @@
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control" name="qualification" id="qualification_dropdown">
                                 <option value="">Highest qualification*</option>
-                                <option value="bca">BCA</option>
+                                <option value="ssc">SSC</option>
+                                <option value="hsc">HSC</option>
+                                <option value="graduate">Graduate</option>
+                                <option value="postgraduate">Post Graduate</option>
+                                <option value="iti">ITI</option>
+                                <option value="diploma">Diploma</option>
+                                <option value="mcvc">MCVC</option>
+
                             </select>
                         </div>
                     </div>
@@ -142,29 +148,33 @@
                                     <p class="verify_title">Verify mobile number</p>
                                     <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
 
-                                    <div class="row px-5">
+                                    <div class="row mt-3">
                                         <div class="col-2">
-                                            <input type="text" name="num_one" id="num_one" class="form_control w-75">
+                                            <input type="text" name="num_one" id="num_one" class="num_input">
                                         </div>
                                         <div class="col-2">
-                                            <input type="text" name="num_two" id="num_two" class="form_control w-75">
+                                            <input type="text" name="num_two" id="num_two" class="num_input">
                                         </div>
                                         <div class="col-2">
-                                            <input type="text" name="num_three" id="num_three" class="form_control w-75">
+                                            <input type="text" name="num_three" id="num_three" class="num_input">
                                         </div>
                                         <div class="col-2">
-                                            <input type="text" name="num_four" id="num_four" class="form_control w-75">
+                                            <input type="text" name="num_four" id="num_four" class="num_input">
                                         </div>
                                         <div class="col-2">
-                                            <input type="text" name="num_five" id="num_five" class="form_control w-75">
+                                            <input type="text" name="num_five" id="num_five" class="num_input">
                                         </div>
                                         <div class="col-2">
-                                            <input type="text" name="num_six" id="num_six" class="form_control w-75">
+                                            <input type="text" name="num_six" id="num_six" class="num_input">
                                         </div>
                                     </div>
+
+                                    <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p>
+                                       <a href="#" class="resend_otp"> Resend OTP</a>
+
                                 </div>
                                 <div class="text-center modal_buttons">
-                                    <button type="button" class="btn cancel_btn" data-dismiss="modal">CANCEL</button>
+                                    <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
                                     <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
                                 </div>
                             </div>
