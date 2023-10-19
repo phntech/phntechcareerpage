@@ -30,6 +30,13 @@
                             <p class="header_title">
                                 Get <span style="color:#3C50E0;"> IT jobs</span> in your city
                             </p>
+                            <ul class="mobile_data_list">
+                                <li>Any Graduate/12th Pass/Housewife can apply</li>
+                                <li> No IT knowledge is required</li>
+                                <li> Company will provide job with training</li>
+                                <li> Industry's Best salary and 100% Job guarantee</li>
+                                <li> 500+ Vacancies for your city</li>
+                            </ul>
                             <p class="header_subtitle">
                                 Explore exciting career opportunities at
                                 PHN Technology
@@ -37,7 +44,9 @@
                         </div>
 
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div">
-                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid" />
+                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid desktop_header_img" />
+                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid mobile_header_img" />
+
                         </div>
                     </div>
                 </div>
@@ -56,32 +65,32 @@
                 <form action="">
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="First name*">
+                            <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name">
 
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="Last name*">
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*">
-                        </div>
-                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="Email">
+                            <input type="text" class="form-control" placeholder="Last name*" name="last_name" id="last_name">
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control">
+                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no">
+                        </div>
+                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
+                            <input type="text" class="form-control" placeholder="Email" name="email" id="email">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
+                            <select class="form-control" name="state_dropdown" id="state_dropdown">
                                 <option value="state">State*</option>
                                 <option value="maharashtra">Maharashtra</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control">
+                            <select class="form-control" name="district_dropdown" id="district_dropdown">
                                 <option value="district">District*</option>
                                 <option value="sangli">Sangli</option>
                             </select>
@@ -89,38 +98,39 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control">
+                            <select class="form-control" name="taluka_dropdown" id="taluka_dropdown">
                                 <option value="taluka">Taluka*</option>
                                 <option value="walwa">Walwa</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control">
+                            <select class="form-control" name="qualification_dropdown" id="qualification_dropdown">
                                 <option value="high_qualification">Highest qualification*</option>
                                 <option value="bca">BCA</option>
                             </select>
                         </div>
                     </div>
                     <p class="captcha_title">Captcha</p>
-                    <div class="row">
+                    <div class="row ml-1">
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
-                            11
+                            <input type="text" class="random_num mt-2" value="11" readonly name="captcha_num_one" id="captcha_num_one" />
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
-                            +
+                            <p class="plus_equal_icon">+</p>
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
-                            3
+                            <input type="text" class="random_num mt-2" value="3" readonly name="captcha_num_two" id="captcha_num_two" />
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
-                            =
+                            <p class="plus_equal_icon">=</p>
                         </div>
-                        <div class="col-sm-8 col-lg-4 col-md-8 col-8">
-                            <input type="text" class="form-control  mt-0" placeholder="Enter addition">
+                        <div class="col-sm-8 col-lg-4 col-md-8 col">
+                            <input type="text" class="form-control  mt-0" placeholder="Enter addition" name="addition" id="addition">
                         </div>
                     </div>
-
-                    <button class="btn submit_btn">Submit</button>
+                    <div class="text-center">
+                        <button class="btn submit_btn">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>

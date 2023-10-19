@@ -15,6 +15,9 @@ body {
 .Header_section {
     padding-top: 40px;
 }
+.Form_section {
+    padding-bottom: 52px;
+}
 .job_title {
     color: #3c50e0;
     font-family: Poppins;
@@ -45,7 +48,7 @@ body {
     margin-top: 32px;
 }
 .apply_text {
-    color: #00005C;
+    color: #00005c;
     text-align: center;
     font-family: Poppins;
     font-size: 40px;
@@ -71,10 +74,33 @@ form {
     border: 1px solid #bdc0d7;
     padding: 12px;
     margin-top: 32px;
+    color: #8a939d;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */
 }
-.submit_btn{
+.form-control:focus {
+    color: #00005c;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px; /* 150% */
+}
+.submit_btn {
     border-radius: 4px;
-background: #3C50E0;
+    background: #3c50e0;
+    padding: 16px 50px;
+    color: #fff;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 48px;
 }
 
 select.form-control:not([size]):not([multiple]) {
@@ -84,6 +110,33 @@ select.form-control:not([size]):not([multiple]) {
     border-radius: 4px;
     background: #e6f4fd;
     text-align: center;
+}
+.random_num {
+    color: #00005c;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    background: transparent;
+    border: none;
+    width: 1rem;
+}
+.plus_equal_icon {
+    color: #666;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    left: 44%;
+    top: 13%;
+}
+.mobile_header_img,
+.mobile_data_list {
+    display: none;
 }
 /* .header_img{
     width: 130%;
@@ -95,6 +148,31 @@ select.form-control:not([size]):not([multiple]) {
     .header_details_div {
         order: 2;
     }
+    .mobile_header_img {
+        display: inline;
+    }
+    .desktop_header_img {
+        display: none;
+    }
+    .job_title,
+    .header_subtitle {
+        display: none;
+    }
+    .header_title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 34px; /* 141.667% */
+    }
+    .mobile_data_list {
+        display: inline;
+        color: #627193;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding-inline-start: 0;
+    }
+
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -102,12 +180,27 @@ select.form-control:not([size]):not([multiple]) {
     .header_details_div {
         order: 2;
     }
+    .mobile_header_img {
+        display: inline;
+    }
+    .desktop_header_img {
+        display: none;
+    }
+    .job_title {
+        display: none;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
     .header_details_div {
         order: 2;
+    }
+    .mobile_header_img {
+        display: inline;
+    }
+    .desktop_header_img {
+        display: none;
     }
 }
 
