@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CareerController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,3 +22,5 @@ Route::get('/career_page', function () {
 Route::get('/form', function () {
     return view('formfield');
 });
+
+Route::POST('application', [CareerController::class, 'submitApplication']);
