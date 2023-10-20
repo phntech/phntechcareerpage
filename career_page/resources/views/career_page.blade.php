@@ -8,7 +8,7 @@
 
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
@@ -18,8 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 
     <script src="{{ asset('js/career.js') }}"></script>
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-
+    <script src="{{ asset('js/states.js') }}"></script>
 </head>
 
 <body>
@@ -102,7 +101,6 @@
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control focus-input" name="district" id="district_dropdown">
                                 <option value="">District*</option>
-                                <option value="sangli">Sangli</option>
                             </select>
                         </div>
                     </div>
@@ -110,7 +108,6 @@
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control focus-input" name="taluka" id="taluka_dropdown">
                                 <option value="">Taluka*</option>
-                                <option value="walwa">Walwa</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
@@ -123,7 +120,6 @@
                                 <option value="iti">ITI</option>
                                 <option value="diploma">Diploma</option>
                                 <option value="mcvc">MCVC</option>
-
                             </select>
                         </div>
                     </div>
@@ -204,3 +200,4 @@
 </body>
 
 </html>
+
