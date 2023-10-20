@@ -49,7 +49,6 @@ function getDistricts(state, data) {
 
 
 function getTalukas(district, data) {
-    debugger;
         var talukaNames = [];
         for (var i = 0; i < data.length; i++) {
             if(data[i]["District name"] === district){

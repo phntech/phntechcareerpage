@@ -104,7 +104,7 @@ class CareerController extends Controller
             return redirect()->back()->with('otpincorrect', "OTP is incorrect")->with('data',$applicant);
         }
 
-        return $otp;
+        
     }
-
 }
+

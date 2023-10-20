@@ -7,10 +7,16 @@
     <title>Career Page</title>
 
     <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
 
@@ -40,7 +46,8 @@ $num2=random_int(0,9);
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_details_div">
 
                             <p class="header_title">
-                                Get <span style="color:#3C50E0;  text-transform: uppercase;"> IT jobs</span> in your city
+                                Get <span style="color:#3C50E0;  text-transform: uppercase;"> IT jobs</span> in your
+                                city
                             </p>
                             <div class="ul_list">
                                 <ul class="mobile_data_list">
@@ -58,8 +65,10 @@ $num2=random_int(0,9);
                         </div>
 
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div">
-                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid desktop_header_img" />
-                            <img src="{{ asset('img/header_img_mob.webp') }}" alt="header_img" class="img-fluid mobile_header_img" />
+                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img"
+                                class="img-fluid desktop_header_img" />
+                            <img src="{{ asset('img/header_img_mob.webp') }}" alt="header_img"
+                                class="img-fluid mobile_header_img" />
 
                         </div>
                     </div>
@@ -73,13 +82,13 @@ $num2=random_int(0,9);
     <section class="Form_section">
         <div class="container-fluid">
             <div class="container">
-            @if (\Session::has('otpcorrect'))
-                        <div class="alert alert-success" id="alert_fail_id">
-                            {!! \Session::get('otpcorrect') !!}
-                        </div>
-                    @endif
+                @if (\Session::has('otpcorrect'))
+                    <div class="alert alert-success" id="alert_fail_id">
+                        {!! \Session::get('otpcorrect') !!}
+                    </div>
+                @endif
                 <p class="apply_text">Apply</p>
-                
+
                 <form id="enquiryForm" method="POST" action="/application">
                     @csrf
                     <div class="row">
@@ -147,73 +156,87 @@ $num2=random_int(0,9);
                             <p class="plus_equal_icon">=</p>
                         </div>
                         <div class="col-sm-8 col-lg-4 col-md-8 col">
-                            <input type="text" class="form-control  mt-0" placeholder="Enter addition" name="addition" id="addition">
+                            <input type="text" class="form-control focus-input mt-0" placeholder="Enter addition"
+                                name="addition" id="addition">
                         </div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal" >
+                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit"
+                            data-toggle="modal">
                     </div>
 
-</form>
+                </form>
 
-                    
 
-                    <div class="otp_modal">
+
+                <div class="otp_modal">
                     @if (\Session::has('status') || \Session::has('otpincorrect'))
-                        <div class="modals" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modals" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-                                <form  method="POST" action="/OTPverify">
-                                    @csrf
-                                    <div class="modal_body text-center">
-                                        <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
-                                        <p class="verify_title">Verify mobile number</p>
-                                        <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
-                                    
+                                    <form method="POST" action="/OTPverify">
+                                        @csrf
+                                        <div class="modal_body text-center">
+                                            <img src="{{ asset('/img/otp_success_animation.gif') }}" alt="">
+                                            <p class="verify_title">Verify mobile number</p>
+                                            <p class="verify_mob_no">OTP is sent to <span
+                                                    style="color: #00005C;">9876543210</span></p>
 
-                                        <div class="row mt-3">
-                                            <div class="col-2">
-                                                <input type="text" name="num_one" id="num_one" class="num_input" maxlength="1" >
+
+
+                                            <div class="row mt-3">
+                                                <div class="col-2">
+                                                    <input type="text" name="num_one" id="num_one"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_two" id="num_two"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_three" id="num_three"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_four" id="num_four"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_five" id="num_five"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_six" id="num_six"
+                                                        class="num_input" maxlength="1">
+                                                </div>
                                             </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_two" id="num_two" class="num_input" maxlength="1" >
-                                            </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_three" id="num_three" class="num_input" maxlength="1" >
-                                            </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_four" id="num_four" class="num_input" maxlength="1" >
-                                            </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_five" id="num_five" class="num_input" maxlength="1" >
-                                            </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_six" id="num_six" class="num_input" maxlength="1" >
-                                            </div>
+                                            @if (\Session::has('otpincorrect'))
+                                                <div class="alert alert-danger" id="alert_fail_id">
+                                                    {!! \Session::get('otpincorrect') !!}
+                                                </div>
+                                            @endif
+                                            <!-- <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p> -->
+                                            <a href="#" class="resend_otp"> Resend OTP</a>
+
                                         </div>
                                         @if (\Session::has('otpincorrect'))
-                        <div class="alert alert-danger" id="alert_fail_id">
-                            {!! \Session::get('otpincorrect') !!}
-                        </div>
-                    @endif
+                                            <div class="wrong_otp" id="alert_fail_id">
+                                                {!! \Session::get('otpincorrect') !!}
+                                            </div>
+                                        @endif
                                         <!-- <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p> -->
                                         <a href="#" class="resend_otp"> Resend OTP</a>
 
                                 </div>
-                                <div class="text-center modal_buttons">
-                                    <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
-                                    <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
-                                </div>
-                                </form>
                             </div>
-                        </div>
-                        @endif
-                    </div>
+                    @endif
                 </div>
-
-
-
             </div>
+
+
+
+        </div>
         </div>
         </div>
         </div>
@@ -228,4 +251,3 @@ $num2=random_int(0,9);
 </body>
 
 </html>
-
