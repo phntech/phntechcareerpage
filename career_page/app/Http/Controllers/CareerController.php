@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
-use App\Models\Applicant;
-use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use App\Models\Applicant;
+
 class CareerController extends Controller
 {
 
@@ -44,74 +44,67 @@ class CareerController extends Controller
         // echo $response.balance;
         $data = json_decode($response, true);
 
-        $status= $data['status'];
+        $status = $data['status'];
 
         // return $status;
 
-        if($status==="success"){
-            Session::put('status',$status);
-            Session::put('otp',$otp);
-            Session::put('first_name',$request->first_name);
-            Session::put('last_name',$request->last_name);
-            Session::put('wtsp_mob_no',$request->wtsp_mob_no);
-            Session::put('email',$request->email);
-            Session::put('state',$request->state);
-            Session::put('district',$request->district);
-            Session::put('taluka',$request->taluka);
-            Session::put('qualification',$request->qualification);
+        if ($status === "success") {
+            Session::put('status', $status);
+            Session::put('otp', $otp);
+            Session::put('first_name', $request->first_name);
+            Session::put('last_name', $request->last_name);
+            Session::put('wtsp_mob_no', $request->wtsp_mob_no);
+            Session::put('email', $request->email);
+            Session::put('state', $request->state);
+            Session::put('district', $request->district);
+            Session::put('taluka', $request->taluka);
+            Session::put('qualification', $request->qualification);
 
+            return redirect()->back()->withinput()->with('status', $status);
 
+        }
 
-            return redirect()->back()->with('status',$status);
+        // //   return $newotp;
 
-      }
-
-
-
-
-    // //   return $newotp;
-
-    //     }else{
-    //         return "wrong otpz";
-    //     }
-
+        //     }else{
+        //         return "wrong otpz";
+        //     }
 
     }
 
+    public function submitOTP(Request $request)
+    {
 
-public function submitOTP(Request $request){
+        $applicant=new Applicant;
+        $num1 = $request->num_one;
+        $applicant->first_name = Session::get('first_name');
+        $applicant->last_name = Session::get('last_name');
+        $applicant->wtsp_mob_no = Session::get('wtsp_mob_no');
+        $applicant->email = Session::get('email');
+        $applicant->state = Session::get('state');
+        $applicant->district = Session::get('district');
+        $applicant->taluka = Session::get('taluka');
+        $applicant->qualification = Session::get('qualification');
 
-    $num1=$request->num_one;
-    $first_name= Session::get('first_name');
-    $last_name= Session::get('last_name');
-    $wtsp_mob_no= Session::get('wtsp_mob_no');
-    $email= Session::get('email');
-    $state= Session::get('state');
-    $district= Session::get('district');
-    $taluka= Session::get('taluka');
-    $qualification= Session::get('qualification');
+        $otp = Session::get('otp');
 
+        $no1 = $request->num_one;
+        $no2 = $request->num_two;
+        $no3 = $request->num_three;
+        $no4 = $request->num_four;
+        $no5 = $request->num_five;
+        $no6 = $request->num_six;
+        $newotp = $no1 . $no2 . $no3 . $no4 . $no5 . $no6;
 
- $otp= Session::get('otp');
+        if ($otp == $newotp) {
+            DB::insert('insert into applicants (`first_name`, `last_name`, `wtsp_mob_no`, `email`, `state`, `district`, `taluka`, `qualification`) values (?, ?,?,?,?,?,?,?)', [$first_name, $last_name, $wtsp_mob_no, $email, $state, $district, $taluka, $qualification]);
+            return redirect()->back()->with('otpcorrect', "Thanks we will contact you soon");
 
- $no1=$request->num_one;
- $no2=$request->num_two;
- $no3=$request->num_three;
- $no4=$request->num_four;
- $no5=$request->num_five;
- $no6=$request->num_six;
- $newotp=$no1.$no2.$no3.$no4.$no5.$no6;
+        } else {
+            return redirect()->back()->with('otpincorrect', "OTP is incorrect")->with('data',$applicant);
+        }
 
-if($otp==$newotp){
-    DB::insert('insert into applicants (`first_name`, `last_name`, `wtsp_mob_no`, `email`, `state`, `district`, `taluka`, `qualification`) values (?, ?,?,?,?,?,?,?)', [$first_name,$last_name,$wtsp_mob_no,$email,$state,$district,$taluka,$qualification]);
-    return redirect()->back()->with('otpcorrect',"Thanks we will contact you soon");
-
-}else{
-    return redirect()->back()->with('otpincorrect',"Sorry, The OTP entered is incorrect, Please verify and try again");
+        
+    }
 }
 
-   return $otp;
-}
-
-
-}
