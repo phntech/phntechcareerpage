@@ -163,20 +163,25 @@ $(document).ready(function () {
 
     // const id = document.getElementById("num_one");
 
-    const num_input = document.getElementsByClassName("num_input");
-
-    // console.log(num_input.length);
-
-    for (let i = 1; i < num_input.length; i++) {
-        $(num_input[0]).keydown(function(){
-            console.log(num_input[i]);
-           $(num_input[i]).next().focus();
-        })
-    }
+    // const num_input = document.getElementsByClassName("num_input");
+    const num_input = document.querySelectorAll(".num_input");
+    // for (let i = 1; i < num_input.length; i++) {
+    //     $(num_input[0]).keyup(function(){
+    //         console.log(num_input[i]);
+    //        $(num_input[i]).focus().next();
+    //     })
+    // }
+    num_input.forEach((input, index) => {
+        input.addEventListener("input", (event) => {
+            console.log("event" + event);
+            console.log("index" + index);
+            if (index < num_input.length && input.value.length === 1){
+                num_input[index + 1].focus();
+            }
+        });
+    });
 
     // var errors = validator.errors();
 
     // console.log(errors);
 });
-
-

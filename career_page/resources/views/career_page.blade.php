@@ -7,10 +7,16 @@
     <title>Career Page</title>
 
     <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
 
@@ -36,7 +42,8 @@
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_details_div">
 
                             <p class="header_title">
-                                Get <span style="color:#3C50E0;  text-transform: uppercase;"> IT jobs</span> in your city
+                                Get <span style="color:#3C50E0;  text-transform: uppercase;"> IT jobs</span> in your
+                                city
                             </p>
                             <div class="ul_list">
                                 <ul class="mobile_data_list">
@@ -54,8 +61,10 @@
                         </div>
 
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div">
-                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid desktop_header_img" />
-                            <img src="{{ asset('img/header_img_mob.webp') }}" alt="header_img" class="img-fluid mobile_header_img" />
+                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img"
+                                class="img-fluid desktop_header_img" />
+                            <img src="{{ asset('img/header_img_mob.webp') }}" alt="header_img"
+                                class="img-fluid mobile_header_img" />
 
                         </div>
                     </div>
@@ -80,19 +89,23 @@
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control " placeholder="First name*" name="first_name" id="first_name">
+                            <input type="text" class="form-control focus-input" placeholder="First name*"
+                                name="first_name" id="first_name">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control " placeholder="Last name*" name="last_name" id="last_name">
+                            <input type="text" class="form-control focus-input" placeholder="Last name*"
+                                name="last_name" id="last_name">
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control " placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no">
+                            <input type="text" class="form-control focus-input" placeholder="WhatsApp mobile number*"
+                                name="wtsp_mob_no" id="wtsp_mob_no">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control " placeholder="Email" name="email" id="email">
+                            <input type="text" class="form-control focus-input" placeholder="Email" name="email"
+                                id="email">
 
                         </div>
                     </div>
@@ -131,23 +144,27 @@
                     <p class="captcha_title">Captcha</p>
                     <div class="row ml-1">
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
-                            <input type="text" class="random_num mt-2" value="11" readonly name="captcha_num_one" id="captcha_num_one" />
+                            <input type="text" class="random_num mt-2" value="11" readonly
+                                name="captcha_num_one" id="captcha_num_one"/>
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
                             <p class="plus_equal_icon">+</p>
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
-                            <input type="text" class="random_num mt-2" value="3" readonly name="captcha_num_two" id="captcha_num_two" />
+                            <input type="text" class="random_num mt-2" value="3" readonly
+                                name="captcha_num_two" id="captcha_num_two" />
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
                             <p class="plus_equal_icon">=</p>
                         </div>
                         <div class="col-sm-8 col-lg-4 col-md-8 col">
-                            <input type="text" class="form-control  mt-0" placeholder="Enter addition" name="addition" id="addition">
+                            <input type="text" class="form-control focus-input mt-0" placeholder="Enter addition"
+                                name="addition" id="addition">
                         </div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal" >
+                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit"
+                            data-toggle="modal">
                     </div>
 
 </form>
@@ -162,29 +179,35 @@
                                 <form  method="POST" action="/OTPverify">
                                     @csrf
                                     <div class="modal_body text-center">
-                                        <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
+                                        <img src="{{ asset('/img/otp_success_animation.gif') }}" alt="">
                                         <p class="verify_title">Verify mobile number</p>
                                         <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
 
 
                                         <div class="row mt-3">
                                             <div class="col-2">
-                                                <input type="text" name="num_one" id="num_one" class="num_input" maxlength="1" >
+                                                <input type="text" name="num_one" id="num_one"
+                                                    class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_two" id="num_two" class="num_input" maxlength="1" >
+                                                <input type="text" name="num_two" id="num_two"
+                                                    class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_three" id="num_three" class="num_input" maxlength="1" >
+                                                <input type="text" name="num_three" id="num_three"
+                                                    class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_four" id="num_four" class="num_input" maxlength="1" >
+                                                <input type="text" name="num_four" id="num_four"
+                                                    class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_five" id="num_five" class="num_input" maxlength="1" >
+                                                <input type="text" name="num_five" id="num_five"
+                                                    class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_six" id="num_six" class="num_input" maxlength="1" >
+                                                <input type="text" name="num_six" id="num_six"
+                                                    class="num_input" maxlength="1">
                                             </div>
                                         </div>
                                         @if (\Session::has('otpincorrect'))
@@ -223,6 +246,4 @@
     </section>
     <!-- form section end -->
 </body>
-
 </html>
-
