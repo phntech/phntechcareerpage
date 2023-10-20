@@ -5,6 +5,15 @@ $(document).ready(function () {
 
     //     );
 
+    function disableBack() { 
+        window.history.forward() 
+    } 
+    window.onload = disableBack(); 
+    window.onpageshow = function(e) { 
+        if (e.persisted) 
+            disableBack(); 
+    }
+
     $("#submit_btn").click(function (e) {
         if ($("#enquiryForm").valid()) {
             // $("#exampleModal").css("display", "block")

@@ -45,11 +45,21 @@ class CareerController extends Controller
         $data = json_decode($response, true);
 
         $status = $data['status'];
-        $district=$request->district;
-        $taluka=$request->taluka;
+        // $district=$request->district;
+        // $taluka=$request->taluka;
         // return $status;
 
         if ($status === "success") {
+            $applicants_new=new Applicant;
+            $applicants_new->first_name = $request->first_name;
+            $applicants_new->last_name = $request->last_name;
+            $applicants_new->wtsp_mob_no = $request->wtsp_mob_no;
+            $applicants_new->email = $request->email;
+            $applicants_new->state = $request->state;
+            $applicants_new->district = $request->district;
+            $applicants_new->taluka = $request->taluka;
+            $applicants_new->qualification = $request->qualification;
+
             Session::put('status', $status);
             Session::put('otp', $otp);
             Session::put('first_name', $request->first_name);
@@ -61,7 +71,7 @@ class CareerController extends Controller
             Session::put('taluka', $request->taluka);
             Session::put('qualification', $request->qualification);
 
-            return redirect()->back()->withinput()->with('status', $status);
+            return redirect()->back()->withinput()->with('status', $status)->with('data',$applicants_new);
 
         }
 
@@ -100,8 +110,14 @@ class CareerController extends Controller
         $newotp = $no1 . $no2 . $no3 . $no4 . $no5 . $no6;
 
         if ($otp == $newotp) {
+            
+            $users = DB::table('applicants')->where('wtsp_mob_no','=',$wtsp_mob_no)->count();
+            if($users){
+                return redirect()->back()->with('exist', "User aleredy exist with us");
+            }else{
             DB::insert('insert into applicants (`first_name`, `last_name`, `wtsp_mob_no`, `email`, `state`, `district`, `taluka`, `qualification`) values (?, ?,?,?,?,?,?,?)', [$first_name, $last_name, $wtsp_mob_no, $email, $state, $district, $taluka, $qualification]);
             return redirect()->back()->with('otpcorrect', "Thanks we will contact you soon");
+            }
 
         } else {
             return redirect()->back()->with('otpincorrect', "Sorry, The OTP entered is incorrect, Please verify and try again")->with('data',$applicant);
@@ -160,7 +176,7 @@ class CareerController extends Controller
         $taluka=$applicants->taluka = Session::get('taluka');
         $applicants->qualification = Session::get('qualification');
 
-        return redirect()->back()->with('data',$applicants)->with('district1',$district)->with('taluka1',$taluka)->with('resend','OTP resend sucessfully');
+        return redirect()->back()->with('data',$applicants)->with('resend','OTP resend sucessfully');
     }
 }
 

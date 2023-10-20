@@ -77,9 +77,16 @@ $num2=random_int(0,9);
         <div class="container-fluid">
             <div class="container">
                 @if (\Session::has('otpcorrect'))
-                    <div class="alert alert-success text-center" id="alert_success_id">
+                    <div class="alert alert-danger text-center" id="alert_success_id">
                         {!! \Session::get('otpcorrect') !!}
                     </div>
+                
+                @endif
+                @if (\Session::has('exist'))
+                    <div class="alert alert-success text-center" id="alert_success_id">
+                        {!! \Session::get('exist') !!}
+                    </div>
+                
                 @endif
                 <p class="apply_text">Apply</p>
 
@@ -112,7 +119,7 @@ $num2=random_int(0,9);
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control " name="district" id="district_dropdown">
-                                <option value="{{ \Session::has('data') ? session('data.district') : (\Session::has('district') ? \Session::get('district') : '') }}"> {{ \Session::has('data') ? session('data.district') : (\Session::has('district') ? \Session::get('district') : 'District*') }}</option>
+                                <option value="{{ \Session::has('data') ? session('data.district') : '' }}"> {{ \Session::has('data') ? session('data.district') : 'District*' }}</option>
                                
 
                             </select>
@@ -121,7 +128,7 @@ $num2=random_int(0,9);
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control " name="taluka" id="taluka_dropdown">
-                                <option value="{{ \Session::has('data') ? session('data.taluka') : (\Session::has('taluka') ? \Session::get('taluka') : (\Session::has('taluka1') ? \Session::get('taluka1') : '')) }}">{{ \Session::has('data') ? session('data.taluka') : (\Session::has('taluka') ? \Session::get('taluka') : (\Session::has('taluka1') ? \Session::get('taluka1') :  'Taluka*')) }}</option>
+                                <option value="{{ \Session::has('data') ? session('data.taluka') : '' }}">{{ \Session::has('data') ? session('data.taluka') :  'Taluka*' }}</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
