@@ -157,7 +157,26 @@ $(document).ready(function () {
         "Invalid captcha."
     );
 
+    $(".cancel_btn").click(function () {
+        $("#exampleModal").css("display", "none");
+    });
+
+    // const id = document.getElementById("num_one");
+
+    const num_input = document.getElementsByClassName("num_input");
+
+    // console.log(num_input.length);
+
+    for (let i = 1; i < num_input.length; i++) {
+        $(num_input[0]).keyup(function(){
+            console.log(num_input[i]);
+           $(num_input[i]).focus().next();
+        })
+    }
+
     // var errors = validator.errors();
 
     // console.log(errors);
 });
+
+
