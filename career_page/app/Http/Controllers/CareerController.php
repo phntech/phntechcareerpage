@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 class CareerController extends Controller
 {
-    
+
     public function submitApplication(Request $request)
     {
         // return "formsubmitted";
@@ -75,7 +75,7 @@ class CareerController extends Controller
     //         return "wrong otpz";
     //     }
 
-       
+
     }
 
 
@@ -107,11 +107,11 @@ if($otp==$newotp){
     return redirect()->back()->with('otpcorrect',"Thanks we will contact you soon");
 
 }else{
-    return redirect()->back()->with('otpincorrect',"OTP is incorrect");
-} 
+    return redirect()->back()->with('otpincorrect',"Sorry, The OTP entered is incorrect, Please verify and try again");
+}
 
    return $otp;
 }
 
-   
+
 }

@@ -75,7 +75,7 @@
                         </div>
                     @endif
                 <p class="apply_text">Apply</p>
-                
+
                 <form id="enquiryForm" method="POST" action="/application">
                     @csrf
                     <div class="row">
@@ -152,7 +152,7 @@
 
 </form>
 
-                    
+
 
                     <div class="otp_modal">
                     @if (\Session::has('status') || \Session::has('otpincorrect'))
@@ -165,7 +165,7 @@
                                         <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
                                         <p class="verify_title">Verify mobile number</p>
                                         <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
-                                    
+
 
                                         <div class="row mt-3">
                                             <div class="col-2">
@@ -188,7 +188,8 @@
                                             </div>
                                         </div>
                                         @if (\Session::has('otpincorrect'))
-                        <div class="alert alert-danger" id="alert_fail_id">
+                                        
+                        <div class="wrong_otp" id="alert_fail_id">
                             {!! \Session::get('otpincorrect') !!}
                         </div>
                     @endif
