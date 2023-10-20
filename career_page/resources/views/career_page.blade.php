@@ -63,7 +63,7 @@
             <div class="container">
                 <p class="apply_text">Apply</p>
 
-                <form action="application" method="POST" id="enquiryForm">
+                <form  id="enquiryForm">
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
@@ -131,7 +131,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal" data-target="#exampleModal">
+                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal" >
                     </div>
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">

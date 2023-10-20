@@ -8,9 +8,9 @@ class CareerController extends Controller
 {
     public function submitApplication(Request $request)
     {
-        // return "formsubmitted";
+        return "formsubmitted";
 
-       $mobile_no= $request->wtsp_mob_no;
+    //    $mobile_no= $request->wtsp_mob_no;
 
         $msg="123456 is the OTP to login to your PHN Career account. DO NOT share the OTP with anyone. - PHN Technology";
         // Account details
@@ -43,5 +43,6 @@ class CareerController extends Controller
         );
 
         return "form submittrd";
+    
     }
 }
