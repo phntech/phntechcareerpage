@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Page</title>
+
+    <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+
     <link rel="stylesheet" href="{{ asset('css/career_page.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
+
     <script src="{{ asset('js/career.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -66,32 +73,31 @@
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name">
-
+                            <input type="text" class="form-control focus-input" placeholder="First name*" name="first_name" id="first_name">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="Last name*" name="last_name" id="last_name">
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no">
-                        </div>
-                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="Email" name="email" id="email">
+                            <input type="text" class="form-control focus-input" placeholder="Last name*" name="last_name" id="last_name">
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="state" id="state">
+                            <input type="text" class="form-control focus-input" placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no">
+                        </div>
+                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
+                            <input type="text" class="form-control focus-input" placeholder="Email" name="email" id="email">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
+                            <select class="form-control focus-input" name="state" id="state">
                                 <option value="">State*</option>
                                 <option value="maharashtra">Maharashtra</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="district" id="district_dropdown">
+                            <select class="form-control focus-input" name="district" id="district_dropdown">
                                 <option value="">District*</option>
                                 <option value="sangli">Sangli</option>
                             </select>
@@ -99,13 +105,13 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="taluka" id="taluka_dropdown">
+                            <select class="form-control focus-input" name="taluka" id="taluka_dropdown">
                                 <option value="">Taluka*</option>
                                 <option value="walwa">Walwa</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="qualification" id="qualification_dropdown">
+                            <select class="form-control focus-input" name="qualification" id="qualification_dropdown">
                                 <option value="">Highest qualification*</option>
                                 <option value="ssc">SSC</option>
                                 <option value="hsc">HSC</option>
@@ -133,7 +139,7 @@
                             <p class="plus_equal_icon">=</p>
                         </div>
                         <div class="col-sm-8 col-lg-4 col-md-8 col">
-                            <input type="text" class="form-control  mt-0" placeholder="Enter addition" name="addition" id="addition">
+                            <input type="text" class="form-control focus-input mt-0" placeholder="Enter addition" name="addition" id="addition">
                         </div>
                     </div>
                     <div class="text-center">
@@ -152,42 +158,46 @@
                                     <
                                         <div class="row mt-3">
                                             <div class="col-2">
-                                                <input type="text" name="num_one" id="num_one" class="num_input">
+                                                <input type="text" name="num_one" id="num_one" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_two" id="num_two" class="num_input">
+                                                <input type="text" name="num_two" id="num_two" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_three" id="num_three" class="num_input">
+                                                <input type="text" name="num_three" id="num_three" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_four" id="num_four" class="num_input">
+                                                <input type="text" name="num_four" id="num_four" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_five" id="num_five" class="num_input">
+                                                <input type="text" name="num_five" id="num_five" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_six" id="num_six" class="num_input">
+                                                <input type="text" name="num_six" id="num_six" class="num_input" maxlength="1">
                                             </div>
                                         </div>
 
                                         <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p>
                                         <a href="#" class="resend_otp"> Resend OTP</a>
 
-                                    </div>
-                                    <div class="text-center modal_buttons">
-                                        <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
-                                        <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
-                                    </div>
-                                    </form>
                                 </div>
+                                <div class="text-center modal_buttons">
+                                    <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
+                                    <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
+
 
 
             </div>
         </div>
+        <script>
+
+        </script>
     </section>
     <!-- form section end -->
 </body>
