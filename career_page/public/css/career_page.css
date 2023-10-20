@@ -24,9 +24,9 @@ body {
     display: flex;
     justify-content: center;
 }
-#exampleModal{
+/* #exampleModal{
     display: none;
-}
+} */
 .modals{
     position: absolute;
     top: 10%;

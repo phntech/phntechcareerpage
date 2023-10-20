@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
 
     <script src="{{ asset('js/career.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
 </head>
 
 <body>
@@ -67,37 +67,42 @@
     <section class="Form_section">
         <div class="container-fluid">
             <div class="container">
+            @if (\Session::has('otpcorrect'))
+                        <div class="alert alert-success" id="alert_fail_id">
+                            {!! \Session::get('otpcorrect') !!}
+                        </div>
+                    @endif
                 <p class="apply_text">Apply</p>
-
+                
                 <form id="enquiryForm" method="POST" action="/application">
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control focus-input" placeholder="First name*" name="first_name" id="first_name">
+                            <input type="text" class="form-control " placeholder="First name*" name="first_name" id="first_name">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control focus-input" placeholder="Last name*" name="last_name" id="last_name">
+                            <input type="text" class="form-control " placeholder="Last name*" name="last_name" id="last_name">
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control focus-input" placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no">
+                            <input type="text" class="form-control " placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control focus-input" placeholder="Email" name="email" id="email">
+                            <input type="text" class="form-control " placeholder="Email" name="email" id="email">
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control focus-input" name="state" id="state">
+                            <select class="form-control " name="state" id="state">
                                 <option value="">State*</option>
                                 <option value="maharashtra">Maharashtra</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control focus-input" name="district" id="district_dropdown">
+                            <select class="form-control " name="district" id="district_dropdown">
                                 <option value="">District*</option>
                                 <option value="sangli">Sangli</option>
                             </select>
@@ -105,13 +110,13 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control focus-input" name="taluka" id="taluka_dropdown">
+                            <select class="form-control " name="taluka" id="taluka_dropdown">
                                 <option value="">Taluka*</option>
                                 <option value="walwa">Walwa</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control focus-input" name="qualification" id="qualification_dropdown">
+                            <select class="form-control " name="qualification" id="qualification_dropdown">
                                 <option value="">Highest qualification*</option>
                                 <option value="ssc">SSC</option>
                                 <option value="hsc">HSC</option>
@@ -139,23 +144,29 @@
                             <p class="plus_equal_icon">=</p>
                         </div>
                         <div class="col-sm-8 col-lg-4 col-md-8 col">
-                            <input type="text" class="form-control focus-input mt-0" placeholder="Enter addition" name="addition" id="addition">
+                            <input type="text" class="form-control  mt-0" placeholder="Enter addition" name="addition" id="addition">
                         </div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal">
+                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal" >
                     </div>
 
+</form>
+
+                    
+
                     <div class="otp_modal">
+                    @if (\Session::has('status') || \Session::has('otpincorrect'))
                         <div class="modals" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-
+                                <form  method="POST" action="/OTPverify">
+                                    @csrf
                                     <div class="modal_body text-center">
                                         <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
                                         <p class="verify_title">Verify mobile number</p>
                                         <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
-                                    <
+                                    
                                         <div class="row mt-3">
                                             <div class="col-2">
                                                 <input type="text" name="num_one" id="num_one" class="num_input" maxlength="1">
@@ -176,8 +187,12 @@
                                                 <input type="text" name="num_six" id="num_six" class="num_input" maxlength="1">
                                             </div>
                                         </div>
-
-                                        <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p>
+                                        @if (\Session::has('otpincorrect'))
+                        <div class="alert alert-danger" id="alert_fail_id">
+                            {!! \Session::get('otpincorrect') !!}
+                        </div>
+                    @endif
+                                        <!-- <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p> -->
                                         <a href="#" class="resend_otp"> Resend OTP</a>
 
                                 </div>
@@ -188,6 +203,7 @@
                                 </form>
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
 
