@@ -126,7 +126,7 @@
                     <p class="captcha_title">Captcha</p>
                     <div class="row ml-1">
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
-                            <input type="text" class="random_num mt-2" value="11" readonly name="captcha_num_one" id="captcha_num_one" />
+                            <input type="text" class="random_num mt-2" value="11" readonly name="captcha_num_one" id="captcha_num_one" autofocus/>
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
                             <p class="plus_equal_icon">+</p>
@@ -154,7 +154,7 @@
                                         <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
                                         <p class="verify_title">Verify mobile number</p>
                                         <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
-                                    <
+                                    
                                         <div class="row mt-3">
                                             <div class="col-2">
                                                 <input type="text" name="num_one" id="num_one" class="num_input" maxlength="1">
