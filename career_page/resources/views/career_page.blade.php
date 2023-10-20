@@ -105,20 +105,21 @@ $num2=random_int(0,9);
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control focus-input" name="state" id="state">
-                                <option value="{{ \Session::has('data') ? session('data.state') : '' }}">State*</option>
+                            <select class="form-control " name="state" id="state">
+                                <option value="{{ \Session::has('data') ? session('data.state') : '' }}">{{ \Session::has('data') ? session('data.state') : 'State*' }}</option>
+                                <option value="maharashtra" {{ 'maharashtra' === old('state') ? 'selected' : '' }}>Maharashtra</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control focus-input" name="district" id="district_dropdown">
-                                <option value="">District*</option>
+                            <select class="form-control " name="district" id="district_dropdown">
+                                <option value="{{ \Session::has('data') ? session('data.district') : '' }}"> {{ \Session::has('data') ? session('data.district') : 'District*' }}</option>
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control focus-input" name="taluka" id="taluka_dropdown">
-                                <option value="">Taluka*</option>
+                            <select class="form-control " name="taluka" id="taluka_dropdown">
+                                <option value="{{ \Session::has('data') ? session('data.taluka') : '' }}">{{ \Session::has('data') ? session('data.taluka') : 'Taluka*' }}</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
@@ -172,7 +173,7 @@ $num2=random_int(0,9);
                                             <img src="{{ asset('/img/otp_success_animation.gif') }}" alt="">
                                             <p class="verify_title">Verify mobile number</p>
                                             <p class="verify_mob_no">OTP is sent to <span
-                                                    style="color: #00005C;">9876543210</span></p>
+                                                    style="color: #00005C;"> {!! \Session::get('wtsp_mob_no') !!}</span></p>
 
 
 
