@@ -139,7 +139,7 @@
                     <div class="text-center">
                         <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal">
                     </div>
-                </form>
+
                     <div class="otp_modal">
                         <div class="modals" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -149,7 +149,7 @@
                                         <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
                                         <p class="verify_title">Verify mobile number</p>
                                         <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
-                                    <form action="/OTPverify" method="GET">
+                                    <
                                         <div class="row mt-3">
                                             <div class="col-2">
                                                 <input type="text" name="num_one" id="num_one" class="num_input">
@@ -185,7 +185,7 @@
                         </div>
                     </div>
 
-               
+
             </div>
         </div>
     </section>
