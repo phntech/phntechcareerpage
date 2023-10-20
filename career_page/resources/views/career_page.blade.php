@@ -78,13 +78,13 @@
     <section class="Form_section">
         <div class="container-fluid">
             <div class="container">
-            @if (\Session::has('otpcorrect'))
-                        <div class="alert alert-success" id="alert_fail_id">
-                            {!! \Session::get('otpcorrect') !!}
-                        </div>
-                    @endif
+                @if (\Session::has('otpcorrect'))
+                    <div class="alert alert-success" id="alert_fail_id">
+                        {!! \Session::get('otpcorrect') !!}
+                    </div>
+                @endif
                 <p class="apply_text">Apply</p>
-                
+
                 <form id="enquiryForm" method="POST" action="/application">
                     @csrf
                     <div class="row">
@@ -145,7 +145,7 @@
                     <div class="row ml-1">
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
                             <input type="text" class="random_num mt-2" value="11" readonly
-                                name="captcha_num_one" id="captcha_num_one"/>
+                                name="captcha_num_one" id="captcha_num_one" />
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
                             <p class="plus_equal_icon">+</p>
@@ -167,72 +167,75 @@
                             data-toggle="modal">
                     </div>
 
-</form>
+                </form>
 
-                    
 
-                    <div class="otp_modal">
+
+                <div class="otp_modal">
                     @if (\Session::has('status') || \Session::has('otpincorrect'))
-                        <div class="modals" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modals" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-                                <form  method="POST" action="/OTPverify">
-                                    @csrf
-                                    <div class="modal_body text-center">
-                                        <img src="{{ asset('/img/otp_success_animation.gif') }}" alt="">
-                                        <p class="verify_title">Verify mobile number</p>
-                                        <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
-                                    
+                                    <form method="POST" action="/OTPverify">
+                                        @csrf
+                                        <div class="modal_body text-center">
+                                            <img src="{{ asset('/img/otp_success_animation.gif') }}" alt="">
+                                            <p class="verify_title">Verify mobile number</p>
+                                            <p class="verify_mob_no">OTP is sent to <span
+                                                    style="color: #00005C;">9876543210</span></p>
 
-                                        <div class="row mt-3">
-                                            <div class="col-2">
-                                                <input type="text" name="num_one" id="num_one"
-                                                    class="num_input" maxlength="1">
+
+                                            <div class="row mt-3">
+                                                <div class="col-2">
+                                                    <input type="text" name="num_one" id="num_one"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_two" id="num_two"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_three" id="num_three"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_four" id="num_four"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_five" id="num_five"
+                                                        class="num_input" maxlength="1">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" name="num_six" id="num_six"
+                                                        class="num_input" maxlength="1">
+                                                </div>
                                             </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_two" id="num_two"
-                                                    class="num_input" maxlength="1">
-                                            </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_three" id="num_three"
-                                                    class="num_input" maxlength="1">
-                                            </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_four" id="num_four"
-                                                    class="num_input" maxlength="1">
-                                            </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_five" id="num_five"
-                                                    class="num_input" maxlength="1">
-                                            </div>
-                                            <div class="col-2">
-                                                <input type="text" name="num_six" id="num_six"
-                                                    class="num_input" maxlength="1">
-                                            </div>
+                                            @if (\Session::has('otpincorrect'))
+                                                <div class="alert alert-danger" id="alert_fail_id">
+                                                    {!! \Session::get('otpincorrect') !!}
+                                                </div>
+                                            @endif
+                                            <!-- <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p> -->
+                                            <a href="#" class="resend_otp"> Resend OTP</a>
+
                                         </div>
-                                        @if (\Session::has('otpincorrect'))
-                        <div class="alert alert-danger" id="alert_fail_id">
-                            {!! \Session::get('otpincorrect') !!}
-                        </div>
-                    @endif
-                                        <!-- <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p> -->
-                                        <a href="#" class="resend_otp"> Resend OTP</a>
-
+                                        <div class="text-center modal_buttons">
+                                            <button type="button" class="btn cancel_btn mr-3"
+                                                data-dismiss="modal">CANCEL</button>
+                                            <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="text-center modal_buttons">
-                                    <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
-                                    <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
-                                </div>
-                                </form>
                             </div>
-                        </div>
-                        @endif
-                    </div>
+                    @endif
                 </div>
-
-
-
             </div>
+
+
+
+        </div>
         </div>
         </div>
         </div>
@@ -245,4 +248,5 @@
     </section>
     <!-- form section end -->
 </body>
+
 </html>
