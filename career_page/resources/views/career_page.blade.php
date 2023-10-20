@@ -112,14 +112,16 @@ $num2=random_int(0,9);
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control " name="district" id="district_dropdown">
-                                <option value="{{ \Session::has('data') ? session('data.district') : '' }}"> {{ \Session::has('data') ? session('data.district') : 'District*' }}</option>
+                                <option value="{{ \Session::has('data') ? session('data.district') : (\Session::has('district') ? \Session::get('district') : '') }}"> {{ \Session::has('data') ? session('data.district') : (\Session::has('district') ? \Session::get('district') : 'District*') }}</option>
+                               
+
                             </select>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control " name="taluka" id="taluka_dropdown">
-                                <option value="{{ \Session::has('data') ? session('data.taluka') : '' }}">{{ \Session::has('data') ? session('data.taluka') : 'Taluka*' }}</option>
+                                <option value="{{ \Session::has('data') ? session('data.taluka') : (\Session::has('taluka') ? \Session::get('taluka') : (\Session::has('taluka1') ? \Session::get('taluka1') : '')) }}">{{ \Session::has('data') ? session('data.taluka') : (\Session::has('taluka') ? \Session::get('taluka') : (\Session::has('taluka1') ? \Session::get('taluka1') :  'Taluka*')) }}</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
@@ -162,7 +164,7 @@ $num2=random_int(0,9);
 
 
                 <div class="otp_modal">
-                    @if (\Session::has('status') || \Session::has('otpincorrect'))
+                    @if (\Session::has('status') || \Session::has('otpincorrect')||  \Session::has('resend'))
                         <div class="modals" id="exampleModal" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -209,7 +211,7 @@ $num2=random_int(0,9);
                                                 </div>
                                             @endif
                                             <!-- <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p> -->
-                                            <a href="#" class="resend_otp"> Resend OTP</a>
+                                            <a href="/resendotp" class="resend_otp" id="resendotp"> Resend OTP</a>
 
                                         </div>
 

@@ -25,6 +25,8 @@ Route::get('/form', function () {
 
 Route::POST('application', [CareerController::class, 'submitApplication']);
 Route::POST('OTPverify', [CareerController::class, 'submitOTP']);
+Route::GET('resendotp', [CareerController::class, 'resendotp']);
+
 
 
 // Route::get('/send-otp', function(){

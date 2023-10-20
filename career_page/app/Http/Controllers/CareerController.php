@@ -45,7 +45,8 @@ class CareerController extends Controller
         $data = json_decode($response, true);
 
         $status = $data['status'];
-
+        $district=$request->district;
+        $taluka=$request->taluka;
         // return $status;
 
         if ($status === "success") {
@@ -71,6 +72,8 @@ class CareerController extends Controller
         //     }
 
     }
+
+    
 
     public function submitOTP(Request $request)
     {
@@ -105,6 +108,59 @@ class CareerController extends Controller
         }
 
 
+    }
+
+    public function resendotp(){
+        $wtsp_mob_no= Session::get('wtsp_mob_no');
+
+        
+
+        $otp = random_int(100000, 999999);
+
+        $msg = $otp . " is the OTP to login to your PHN Career account. DO NOT share the OTP with anyone. - PHN Technology";
+        // Account details
+        $apiKey = urlencode('NTM0ZjM5NDI3NTdhNjgzNjU4NDg1MTY3NTQ3MjZmNzE=');
+
+        // Message details
+        $numbers = array("91" . $wtsp_mob_no);
+        $sender = urlencode('PHNTEC');
+        $message = rawurlencode($msg);
+
+        $numbers = implode(',', $numbers);
+
+        // Prepare data for POST request
+        $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+        // Send the POST request with cURL
+        $ch = curl_init('https://api.textlocal.in/send/');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        // Process your response here
+        // echo $response.balance;
+        $data = json_decode($response, true);
+
+        Session::put('otp', $otp);
+
+        // $status = $data['status'];
+    
+        // return $wtsp_mob_no;
+
+        $applicants=new Applicant;
+       
+        $applicants->first_name = Session::get('first_name');
+        $applicants->last_name = Session::get('last_name');
+        $applicants->wtsp_mob_no = Session::get('wtsp_mob_no');
+        $applicants->email = Session::get('email');
+        $applicants->state = Session::get('state');
+       $district= $applicants->district = Session::get('district');
+        $taluka=$applicants->taluka = Session::get('taluka');
+        $applicants->qualification = Session::get('qualification');
+
+        return redirect()->back()->with('data',$applicants)->with('district1',$district)->with('taluka1',$taluka)->with('resend','OTP resend sucessfully');
     }
 }
 

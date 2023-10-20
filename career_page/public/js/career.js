@@ -15,6 +15,12 @@ $(document).ready(function () {
             $("#exampleModal").css("display", "none");
         }
     });
+
+    // $("#resendotp").click(function (e) {
+    //     window.location.href = "/resendotp";
+    //     e.preventDefault();
+    // });
+
     // $("#submit_btn").click(function (e) {
     //     console.log(validation.errorList.length);
     // });
