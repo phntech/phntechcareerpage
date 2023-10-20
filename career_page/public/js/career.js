@@ -15,6 +15,18 @@ $(document).ready(function(){
             $("#exampleModal").css("display", "none")
         }
     });
+    // $("#submit_btn").click(function (e) {
+    //     console.log(validation.errorList.length);
+    // });
+    $('.focus-input').focus(function() {
+        if (this.type == 'text') {
+            $(this).addClass('focussed').val('');
+        }
+    });
+
+    $('.focus-input').blur(function() {
+        $(this).removeClass('focussed');
+        $(this).addClass('notfocussed');    });
   
   var validation= jQuery("#enquiryForm").validate({
    
@@ -149,6 +161,6 @@ $(document).ready(function(){
 
     // var errors = validator.errors(); 
 
-    // console.log(errors);
-
+    // console.log(errors);    
   });
+
