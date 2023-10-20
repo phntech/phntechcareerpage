@@ -38,13 +38,15 @@
                             <p class="header_title">
                                 Get <span style="color:#3C50E0;  text-transform: uppercase;"> IT jobs</span> in your city
                             </p>
-                            <ul class="mobile_data_list">
-                                <li>Any Graduate/12th Pass/Housewife can apply</li>
-                                <li> No IT knowledge is required</li>
-                                <li> Company will provide job with training</li>
-                                <li> Industry's Best salary and 100% Job guarantee</li>
-                                <li> 500+ Vacancies for your city</li>
-                            </ul>
+                            <div class="ul_list">
+                                <ul class="mobile_data_list">
+                                    <li>Any Graduate/12th Pass/Housewife can apply</li>
+                                    <li> No IT knowledge is required</li>
+                                    <li> Company will provide job with training</li>
+                                    <li> Industry's Best salary and 100% Job guarantee</li>
+                                    <li> 500+ Vacancies for your city</li>
+                                </ul>
+                            </div>
                             <p class="header_subtitle">
                                 Explore exciting career opportunities at
                                 PHN Technology
@@ -195,7 +197,11 @@
             </div>
         </div>
         <script>
-
+            $('.num_input').keydown(function(e) {
+                if ((e.which == 8 || e.which == 46) && $(this).val() == '') {
+                    $(this).prev('input').focus();
+                }
+            });
         </script>
     </section>
     <!-- form section end -->
