@@ -5,12 +5,17 @@ $(document).ready(function(){
 
     //     );
 
-    // $("#submit_btn").click(function (e) {
-    //     console.log(validation.errorList.length);
-    // });
+    $("#submit_btn").click(function (e) {
+       
+        if($("#enquiryForm").valid()){
+            $("#exampleModal").css("display", "block")
+        }else{
+           console.log( $("#enquiryForm").valid());
+        }
+    });
   
   var validation= jQuery("#enquiryForm").validate({
-    
+   
         rules: {
             first_name: {
                 required: true,
@@ -76,12 +81,12 @@ $(document).ready(function(){
             addition:{
                 required: "Please enter the addition",
             },
-            submitHandler: function (form) {
+            // submitHandler: function (form) {
                 
-                console.log('test');
-                form.submit();
+            //     console.log('test');
+            //     // form.submit();
                
-            },
+            // },
            
         }
 
