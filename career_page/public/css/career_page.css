@@ -380,6 +380,9 @@ input[type=text]:focus {
         font-weight: 700;
         margin-top: 16px;
     }
+    .Form_section {
+        margin-top: 0;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
