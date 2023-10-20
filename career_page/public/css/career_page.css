@@ -19,7 +19,20 @@ body {
     padding-bottom: 52px;
     margin-top: -5rem;
 }
+.otp_modal{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+.modals{
+    position: absolute;
+    top: 10%;
 
+}
+.modal-content{
+    padding: 22px;
+    border: none;
+}
 .header_title {
     color: #00005c;
     font-family: Poppins;

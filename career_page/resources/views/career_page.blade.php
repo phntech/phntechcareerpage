@@ -62,7 +62,7 @@
             <div class="container">
                 <p class="apply_text">Apply</p>
 
-                <form  id="enquiryForm">
+                <form id="enquiryForm">
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
@@ -137,45 +137,47 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal" >
+                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal">
                     </div>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
+                    <div class="otp_modal">
+                        <div class="modals" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
 
-                                <div class="modal_body text-center">
-                                    <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
-                                    <p class="verify_title">Verify mobile number</p>
-                                    <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
+                                    <div class="modal_body text-center">
+                                        <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
+                                        <p class="verify_title">Verify mobile number</p>
+                                        <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
 
-                                    <div class="row mt-3">
-                                        <div class="col-2">
-                                            <input type="text" name="num_one" id="num_one" class="num_input">
+                                        <div class="row mt-3">
+                                            <div class="col-2">
+                                                <input type="text" name="num_one" id="num_one" class="num_input">
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="text" name="num_two" id="num_two" class="num_input">
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="text" name="num_three" id="num_three" class="num_input">
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="text" name="num_four" id="num_four" class="num_input">
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="text" name="num_five" id="num_five" class="num_input">
+                                            </div>
+                                            <div class="col-2">
+                                                <input type="text" name="num_six" id="num_six" class="num_input">
+                                            </div>
                                         </div>
-                                        <div class="col-2">
-                                            <input type="text" name="num_two" id="num_two" class="num_input">
-                                        </div>
-                                        <div class="col-2">
-                                            <input type="text" name="num_three" id="num_three" class="num_input">
-                                        </div>
-                                        <div class="col-2">
-                                            <input type="text" name="num_four" id="num_four" class="num_input">
-                                        </div>
-                                        <div class="col-2">
-                                            <input type="text" name="num_five" id="num_five" class="num_input">
-                                        </div>
-                                        <div class="col-2">
-                                            <input type="text" name="num_six" id="num_six" class="num_input">
-                                        </div>
+
+                                        <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p>
+                                        <a href="#" class="resend_otp"> Resend OTP</a>
+
                                     </div>
-
-                                    <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p>
-                                       <a href="#" class="resend_otp"> Resend OTP</a>
-
-                                </div>
-                                <div class="text-center modal_buttons">
-                                    <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
-                                    <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
+                                    <div class="text-center modal_buttons">
+                                        <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
+                                        <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
+                                    </div>
                                 </div>
                             </div>
                         </div>
