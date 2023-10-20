@@ -154,53 +154,46 @@
                                         <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
                                         <p class="verify_title">Verify mobile number</p>
                                         <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
-                                    
                                         <div class="row mt-3">
                                             <div class="col-2">
-                                                <input type="text" name="num_one" id="num_one" class="num_input" maxlength="1">
+                                                <input type="text" name="num_one" id="num_one" class="num_input" maxlength="1" >
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_two" id="num_two" class="num_input" maxlength="1">
+                                                <input type="text" name="num_two" id="num_two" class="num_input" maxlength="1" >
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_three" id="num_three" class="num_input" maxlength="1">
+                                                <input type="text" name="num_three" id="num_three" class="num_input" maxlength="1" >
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_four" id="num_four" class="num_input" maxlength="1">
+                                                <input type="text" name="num_four" id="num_four" class="num_input" maxlength="1" >
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_five" id="num_five" class="num_input" maxlength="1">
+                                                <input type="text" name="num_five" id="num_five" class="num_input" maxlength="1" >
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_six" id="num_six" class="num_input" maxlength="1">
+                                                <input type="text" name="num_six" id="num_six" class="num_input" maxlength="1" >
                                             </div>
                                         </div>
 
                                         <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p>
                                         <a href="#" class="resend_otp"> Resend OTP</a>
 
-                                </div>
-                                <div class="text-center modal_buttons">
-                                    <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
-                                    <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
-                                </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
+                                    </div>
+                                    <div class="text-center modal_buttons">
+                                        <button type="button" class="btn cancel_btn mr-3">CANCEL</button>
+                                        <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
+                                    </div>
+                </form>
             </div>
         </div>
-        <script>
-            $('.num_input').keydown(function(e) {
-                if ((e.which == 8 || e.which == 46) && $(this).val() == '') {
-                    $(this).prev('input').focus();
-                }
-            });
-        </script>
+        </div>
+        </div>
+
+
+
+        </div>
+        </div>
+
     </section>
     <!-- form section end -->
 </body>
