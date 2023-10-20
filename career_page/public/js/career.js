@@ -10,7 +10,7 @@ $(document).ready(function(){
         if($("#enquiryForm").valid()){
             $("#exampleModal").css("display", "block")
         }else{
-           console.log( $("#enquiryForm").valid());
+            $("#exampleModal").css("display", "none")
         }
     });
   
