@@ -96,7 +96,7 @@ $num2=random_int(0,9);
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control focus-input" placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}">
+                            <input type="text" class="form-control focus-input" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <input type="text" class="form-control focus-input" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}">
