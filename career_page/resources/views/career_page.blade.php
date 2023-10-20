@@ -77,7 +77,7 @@ $num2=random_int(0,9);
         <div class="container-fluid">
             <div class="container">
                 @if (\Session::has('otpcorrect'))
-                    <div class="alert alert-success" id="alert_fail_id">
+                    <div class="alert alert-success text-center" id="alert_success_id">
                         {!! \Session::get('otpcorrect') !!}
                     </div>
                 @endif
@@ -180,31 +180,31 @@ $num2=random_int(0,9);
                                             <div class="row mt-3 mb-3">
                                                 <div class="col-2">
                                                     <input type="text" name="num_one" id="num_one"
-                                                        class="num_input" maxlength="1">
+                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
                                                 </div>
                                                 <div class="col-2">
                                                     <input type="text" name="num_two" id="num_two"
-                                                        class="num_input" maxlength="1">
+                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
                                                 </div>
                                                 <div class="col-2">
                                                     <input type="text" name="num_three" id="num_three"
-                                                        class="num_input" maxlength="1">
+                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
                                                 </div>
                                                 <div class="col-2">
                                                     <input type="text" name="num_four" id="num_four"
-                                                        class="num_input" maxlength="1">
+                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
                                                 </div>
                                                 <div class="col-2">
                                                     <input type="text" name="num_five" id="num_five"
-                                                        class="num_input" maxlength="1">
+                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
                                                 </div>
                                                 <div class="col-2">
                                                     <input type="text" name="num_six" id="num_six"
-                                                        class="num_input" maxlength="1">
+                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
                                                 </div>
                                             </div>
                                             @if (\Session::has('otpincorrect'))
-                                                <div class="alert alert-danger" id="alert_fail_id">
+                                                <div class="wrong_otp" id="alert_fail_id">
                                                     {!! \Session::get('otpincorrect') !!}
                                                 </div>
                                             @endif
@@ -213,7 +213,7 @@ $num2=random_int(0,9);
 
                                         </div>
 
-                                    
+
                                     <div class="text-center modal_buttons">
                                         <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
                                         <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
