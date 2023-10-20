@@ -17,8 +17,22 @@ body {
 }
 .Form_section {
     padding-bottom: 52px;
+    margin-top: -5rem;
 }
+.otp_modal{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+.modals{
+    position: absolute;
+    top: 10%;
 
+}
+.modal-content{
+    padding: 22px;
+    border: none;
+}
 .header_title {
     color: #00005c;
     font-family: Poppins;
@@ -26,8 +40,7 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: 82px;
-    margin-top: 16px;
-
+    margin-top: 75px;
 }
 .header_subtitle {
     color: #627193;
@@ -158,6 +171,11 @@ select.form-control:not([size]):not([multiple]) {
     line-height: normal;
     background: #fff;
 }
+input[type=text]:focus {
+    border-color: #3c50e0;
+    box-shadow: 0 0 1px #3c50e0;
+    background: transparent;
+  }
 .otp_submit_btn {
     border-radius: 4px;
     background: #3c50e0;
@@ -237,6 +255,7 @@ select.form-control:not([size]):not([multiple]) {
         font-size: 24px;
         font-weight: 700;
         line-height: 34px; /* 141.667% */
+        margin-top: 40px;
     }
     .mobile_data_list {
         display: inline;
@@ -280,6 +299,9 @@ select.form-control:not([size]):not([multiple]) {
         margin-left: -1rem;
         margin-top: -1rem;
     }
+    .Form_section {
+        margin-top: 0;
+    }
 
 }
 
@@ -301,7 +323,9 @@ select.form-control:not([size]):not([multiple]) {
     .header_title {
         font-size: 24px;
         font-weight: 700;
-        line-height: 34px; /* 141.667% */
+        line-height: 34px;
+        margin-top: 40px;
+
     }
     .mobile_data_list {
         display: inline;
@@ -325,7 +349,9 @@ select.form-control:not([size]):not([multiple]) {
         margin-left: -1rem;
         margin-top: -1rem;
     }
-
+    .Form_section {
+        margin-top: 0;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -366,6 +392,9 @@ select.form-control:not([size]):not([multiple]) {
         font-style: normal;
         font-weight: 700;
         margin-top: 16px;
+    }
+    .Form_section {
+        margin-top: 0;
     }
 }
 
