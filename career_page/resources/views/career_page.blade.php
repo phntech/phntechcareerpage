@@ -5,11 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Career Page</title>
+
+    <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
+
+    <!-- animation cdn -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
     <link rel="stylesheet" href="{{ asset('css/career_page.css') }}">
     <script src="{{ asset('js/career.js') }}"></script>
 </head>
@@ -26,7 +36,7 @@
 
                 <div class="header">
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_details_div">
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_details_div animate__animated animate__fadeInUp">
 
                             <p class="header_title">
                                 Get <span style="color:#3C50E0;  text-transform: uppercase;"> IT jobs</span> in your city
@@ -44,7 +54,7 @@
                             </p>
                         </div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div">
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div animate__animated animate__fadeInRight">
                             <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid desktop_header_img" />
                             <img src="{{ asset('img/header_img_mob.webp') }}" alt="header_img" class="img-fluid mobile_header_img" />
 
@@ -151,22 +161,22 @@
 
                                         <div class="row mt-3">
                                             <div class="col-2">
-                                                <input type="text" name="num_one" id="num_one" class="num_input">
+                                                <input type="text" name="num_one" id="num_one" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_two" id="num_two" class="num_input">
+                                                <input type="text" name="num_two" id="num_two" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_three" id="num_three" class="num_input">
+                                                <input type="text" name="num_three" id="num_three" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_four" id="num_four" class="num_input">
+                                                <input type="text" name="num_four" id="num_four" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_five" id="num_five" class="num_input">
+                                                <input type="text" name="num_five" id="num_five" class="num_input" maxlength="1">
                                             </div>
                                             <div class="col-2">
-                                                <input type="text" name="num_six" id="num_six" class="num_input">
+                                                <input type="text" name="num_six" id="num_six" class="num_input" maxlength="1">
                                             </div>
                                         </div>
 
