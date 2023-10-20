@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/career_page.css') }}">
     <script src="{{ asset('js/career.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -76,32 +77,31 @@
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name">
-
+                            <input type="text" class="form-control focus-input" placeholder="First name*" name="first_name" id="first_name">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="Last name*" name="last_name" id="last_name">
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no">
-                        </div>
-                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="Email" name="email" id="email">
+                            <input type="text" class="form-control focus-input" placeholder="Last name*" name="last_name" id="last_name">
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="state" id="state">
+                            <input type="text" class="form-control focus-input" placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no">
+                        </div>
+                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
+                            <input type="text" class="form-control focus-input" placeholder="Email" name="email" id="email">
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 col-lg-6 col-md-6 col-12">
+                            <select class="form-control focus-input" name="state" id="state">
                                 <option value="">State*</option>
                                 <option value="maharashtra">Maharashtra</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="district" id="district_dropdown">
+                            <select class="form-control focus-input" name="district" id="district_dropdown">
                                 <option value="">District*</option>
                                 <option value="sangli">Sangli</option>
                             </select>
@@ -109,13 +109,13 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="taluka" id="taluka_dropdown">
+                            <select class="form-control focus-input" name="taluka" id="taluka_dropdown">
                                 <option value="">Taluka*</option>
                                 <option value="walwa">Walwa</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="qualification" id="qualification_dropdown">
+                            <select class="form-control focus-input" name="qualification" id="qualification_dropdown">
                                 <option value="">Highest qualification*</option>
                                 <option value="ssc">SSC</option>
                                 <option value="hsc">HSC</option>
@@ -143,7 +143,7 @@
                             <p class="plus_equal_icon">=</p>
                         </div>
                         <div class="col-sm-8 col-lg-4 col-md-8 col">
-                            <input type="text" class="form-control  mt-0" placeholder="Enter addition" name="addition" id="addition">
+                            <input type="text" class="form-control focus-input mt-0" placeholder="Enter addition" name="addition" id="addition">
                         </div>
                     </div>
                     <div class="text-center">
