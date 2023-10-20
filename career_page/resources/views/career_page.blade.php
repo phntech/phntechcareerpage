@@ -106,8 +106,8 @@ $num2=random_int(0,9);
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control " name="state" id="state">
-                                <option value="">State*</option>
-                                <option value="maharashtra">Maharashtra</option>
+                                <option value="{{ \Session::has('data') ? session('data.state') : '' }}">State*</option>
+                                <option value="maharashtra" {{ 'maharashtra' === old('state') ? 'selected' : '' }}>{{ \Session::has('data') ? session('data.qualification') : "Highest qualification*" }}</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
@@ -124,7 +124,7 @@ $num2=random_int(0,9);
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control " name="qualification" id="qualification_dropdown">
-                                <option value="{{ \Session::has('data') ? session('data.qualification') : '' }}">{{ \Session::has('data') ? session('data.qualification') : "Highest qualification*" }}"</option>
+                                <option value="{{ \Session::has('data') ? session('data.qualification') : '' }}">{{ \Session::has('data') ? session('data.qualification') : "Highest qualification*" }}</option>
                                 <option value="ssc" {{ 'ssc' === old('qualification') ? 'selected' : '' }}>SSC</option>
                                 <option value="hsc" {{ 'hsc' === old('qualification') ? 'selected' : '' }}>HSC</option>
                                 <option value="graduate" {{ 'graduate' === old('qualification') ? 'selected' : '' }}>Graduate</option>
@@ -177,7 +177,7 @@ $num2=random_int(0,9);
 
 
 
-                                            <div class="row mt-3">
+                                            <div class="row mt-3 mb-3">
                                                 <div class="col-2">
                                                     <input type="text" name="num_one" id="num_one"
                                                         class="num_input" maxlength="1">
@@ -212,21 +212,14 @@ $num2=random_int(0,9);
                                             <a href="#" class="resend_otp"> Resend OTP</a>
 
                                         </div>
-                                        @if (\Session::has('otpincorrect'))
 
-                                        <div class="wrong_otp" id="alert_fail_id">
-                                            {!! \Session::get('otpincorrect') !!}
-                                        </div>
-                                        @endif
-                                        <!-- <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p> -->
-                                        <a href="#" class="resend_otp"> Resend OTP</a>
-
-                                    </div>
+                                    
                                     <div class="text-center modal_buttons">
                                         <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
                                         <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
                                     </div>
                                 </form>
+                            </div>
                             </div>
                     @endif
                 </div>

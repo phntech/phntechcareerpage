@@ -77,14 +77,14 @@ class CareerController extends Controller
 
         $applicant=new Applicant;
         $num1 = $request->num_one;
-        $applicant->first_name = Session::get('first_name');
-        $applicant->last_name = Session::get('last_name');
-        $applicant->wtsp_mob_no = Session::get('wtsp_mob_no');
-        $applicant->email = Session::get('email');
-        $applicant->state = Session::get('state');
-        $applicant->district = Session::get('district');
-        $applicant->taluka = Session::get('taluka');
-        $applicant->qualification = Session::get('qualification');
+        $applicant->first_name =$first_name= Session::get('first_name');
+        $applicant->last_name =$last_name= Session::get('last_name');
+        $applicant->wtsp_mob_no =$wtsp_mob_no= Session::get('wtsp_mob_no');
+        $applicant->email =$email= Session::get('email');
+        $applicant->state =$state= Session::get('state');
+        $applicant->district =$district= Session::get('district');
+        $applicant->taluka =$taluka= Session::get('taluka');
+        $applicant->qualification =$qualification= Session::get('qualification');
 
         $otp = Session::get('otp');
 
