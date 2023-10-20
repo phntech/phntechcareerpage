@@ -1,5 +1,5 @@
-$(document).ready(function(){
-    let onsubmit=false;
+$(document).ready(function () {
+    let onsubmit = false;
     document.getElementById("submit_btn").disabled = false;
     // console.log(validation.errorList.length
 
@@ -21,18 +21,18 @@ $(document).ready(function(){
     // $("#submit_btn").click(function (e) {
     //     console.log(validation.errorList.length);
     // });
-    // $('.focus-input').focus(function() {
-    //     if (this.type == 'text') {
-    //         $(this).addClass('focussed').val('');
-    //     }
-    // });
+    $(".focus-input").focus(function () {
+        if (this.type == "text") {
+            $(this).addClass("focussed").val("");
+        }
+    });
 
-    // $('.focus-input').blur(function() {
-    //     $(this).removeClass('focussed');
-    //     $(this).addClass('notfocussed');    });
-  
-  var validation= jQuery("#enquiryForm").validate({
-   
+    $(".focus-input").blur(function () {
+        $(this).removeClass("focussed");
+        $(this).addClass("notfocussed");
+    });
+
+    var validation = jQuery("#enquiryForm").validate({
         rules: {
             first_name: {
                 required: true,
@@ -99,18 +99,13 @@ $(document).ready(function(){
                 required: "Please enter the addition",
             },
             // submitHandler: function (form) {
-                
+
             //     console.log('test');
             //     // form.submit();
-               
+
             // },
-           
-        }
-
-
-       
-
-    })
+        },
+    });
 
     $.validator.addMethod(
         "firstNameRegx",
@@ -145,8 +140,12 @@ $(document).ready(function(){
     $.validator.addMethod(
         "additionRule",
         function (value, element, regexpr) {
-            $capcha1 = parseInt(document.getElementById("captcha_num_one").value);
-            $capcha2 = parseInt(document.getElementById("captcha_num_two").value);
+            $capcha1 = parseInt(
+                document.getElementById("captcha_num_one").value
+            );
+            $capcha2 = parseInt(
+                document.getElementById("captcha_num_two").value
+            );
             $addCaptcha = parseInt(document.getElementById("addition").value);
             $result = $capcha1 + $capcha2;
             if ($result === $addCaptcha) {
@@ -157,13 +156,8 @@ $(document).ready(function(){
         },
         "Invalid captcha."
     );
- 
 
-    
+    // var errors = validator.errors();
 
-
-    // var errors = validator.errors(); 
-
-    // console.log(errors);    
-  });
-
+    // console.log(errors);
+});
