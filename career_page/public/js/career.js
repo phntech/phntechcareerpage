@@ -175,7 +175,7 @@ $(document).ready(function () {
         input.addEventListener("input", (event) => {
             console.log("event" + event);
             console.log("index" + index);
-            if (index < num_input.length - 1 && input.value.length === 1){
+            if (index < num_input.length && input.value.length === 1){
                 num_input[index + 1].focus();
             }
         });
