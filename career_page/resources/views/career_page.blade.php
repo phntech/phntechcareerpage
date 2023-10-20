@@ -186,6 +186,7 @@
                                                     style="color: #00005C;">9876543210</span></p>
 
 
+
                                             <div class="row mt-3">
                                                 <div class="col-2">
                                                     <input type="text" name="num_one" id="num_one"
@@ -221,12 +222,14 @@
                                             <a href="#" class="resend_otp"> Resend OTP</a>
 
                                         </div>
-                                        <div class="text-center modal_buttons">
-                                            <button type="button" class="btn cancel_btn mr-3"
-                                                data-dismiss="modal">CANCEL</button>
-                                            <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
-                                        </div>
-                                    </form>
+                                        @if (\Session::has('otpincorrect'))
+                                            <div class="wrong_otp" id="alert_fail_id">
+                                                {!! \Session::get('otpincorrect') !!}
+                                            </div>
+                                        @endif
+                                        <!-- <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p> -->
+                                        <a href="#" class="resend_otp"> Resend OTP</a>
+
                                 </div>
                             </div>
                     @endif

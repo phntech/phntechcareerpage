@@ -19,22 +19,31 @@ body {
     padding-bottom: 52px;
     margin-top: -5rem;
 }
-.otp_modal{
-    width:100%;
+.otp_modal {
+    width: 100%;
     display: flex;
     justify-content: center;
 }
 /* #exampleModal{
     display: none;
 } */
-.modals{
+.modals {
     position: absolute;
     top: 10%;
-
 }
-.modal-content{
+.modal-content {
     padding: 22px;
     border: none;
+}
+#alert_fail_id {
+    color: #f33;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    margin-top: 16px;
 }
 .header_title {
     color: #00005c;
@@ -202,11 +211,11 @@ select.form-control:not([size]):not([multiple]) {
     line-height: normal;
     background: #fff;
 }
-input[type=text]:focus {
+input[type="text"]:focus {
     border-color: #3c50e0;
     box-shadow: 0 0 1px #3c50e0;
     background: transparent;
-  }
+}
 .otp_submit_btn {
     border-radius: 4px;
     background: #3c50e0;
@@ -249,11 +258,12 @@ input[type=text]:focus {
     margin-top: 20px;
     margin-bottom: 0;
 }
-.modal .row{
+.modal .row {
     margin-left: 10px;
     margin-right: 10px;
 }
-.resend_otp,.resend_otp:focus {
+.resend_otp,
+.resend_otp:focus {
     text-decoration: none;
     color: #3e66df;
     font-size: 12px;
@@ -261,11 +271,10 @@ input[type=text]:focus {
     font-weight: 600;
     line-height: 21px;
 }
-.modal_buttons{
+.modal_buttons {
     margin-bottom: 32px;
     margin-top: 24px;
 }
-
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
@@ -312,28 +321,27 @@ input[type=text]:focus {
     .random_num {
         margin-left: -5px;
     }
-    .modal{
+    .modal {
         padding-right: 0;
     }
-   .num_input{
-    max-width: 100%;
-    height: 2rem;
-   }
-   .modal .row{
-    margin-left: 0;
-    margin-right: 4px;
-   }
-    .plus_equal_icon{
+    .num_input {
+        max-width: 100%;
+        height: 2rem;
+    }
+    .modal .row {
+        margin-left: 0;
+        margin-right: 4px;
+    }
+    .plus_equal_icon {
         left: 32%;
     }
-    .logo{
+    .logo {
         margin-left: -1rem;
         margin-top: -1rem;
     }
     .Form_section {
         margin-top: 0;
     }
-
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -356,7 +364,6 @@ input[type=text]:focus {
         font-weight: 700;
         line-height: 34px;
         margin-top: 40px;
-
     }
     .mobile_data_list {
         display: inline;
@@ -376,7 +383,7 @@ input[type=text]:focus {
         font-weight: 700;
         margin-top: 16px;
     }
-    .logo{
+    .logo {
         margin-left: -1rem;
         margin-top: -1rem;
     }
