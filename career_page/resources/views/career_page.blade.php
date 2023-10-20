@@ -22,7 +22,11 @@
 </head>
 
 <body>
+@php
+$num1=random_int(0,9);
+$num2=random_int(0,9);
 
+@endphp
     <!-- header section start -->
     <section class="Header_section">
         <div class="container-fluid">
@@ -80,19 +84,19 @@
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control " placeholder="First name*" name="first_name" id="first_name">
+                            <input type="text" class="form-control " placeholder="First name*" name="first_name" id="first_name" value="{{ \Session::has('data') ? session('data.first_name') : old('first_name') }}">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control " placeholder="Last name*" name="last_name" id="last_name">
+                            <input type="text" class="form-control " placeholder="Last name*" name="last_name" id="last_name" value="{{ \Session::has('data') ? session('data.last_name') : old('last_name') }}">
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control " placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no">
+                            <input type="text" class="form-control " placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control " placeholder="Email" name="email" id="email">
+                            <input type="text" class="form-control " placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}">
 
                         </div>
                     </div>
@@ -117,27 +121,27 @@
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <select class="form-control " name="qualification" id="qualification_dropdown">
-                                <option value="">Highest qualification*</option>
-                                <option value="ssc">SSC</option>
-                                <option value="hsc">HSC</option>
-                                <option value="graduate">Graduate</option>
-                                <option value="postgraduate">Post Graduate</option>
-                                <option value="iti">ITI</option>
-                                <option value="diploma">Diploma</option>
-                                <option value="mcvc">MCVC</option>
+                                <option value="{{ \Session::has('data') ? session('data.qualification') : '' }}">{{ \Session::has('data') ? session('data.qualification') : "Highest qualification*" }}"</option>
+                                <option value="ssc" {{ 'ssc' === old('qualification') ? 'selected' : '' }}>SSC</option>
+                                <option value="hsc" {{ 'hsc' === old('qualification') ? 'selected' : '' }}>HSC</option>
+                                <option value="graduate" {{ 'graduate' === old('qualification') ? 'selected' : '' }}>Graduate</option>
+                                <option value="postgraduate" {{ 'postgraduate' === old('qualification') ? 'selected' : '' }}>Post Graduate</option>
+                                <option value="iti" {{ 'iti' === old('qualification') ? 'selected' : '' }}>ITI</option>
+                                <option value="diploma" {{ 'diploma' === old('qualification') ? 'selected' : '' }}>Diploma</option>
+                                <option value="mcvc" {{ 'mcvc' === old('qualification') ? 'selected' : '' }}>MCVC</option>
                             </select>
                         </div>
                     </div>
                     <p class="captcha_title">Captcha</p>
                     <div class="row ml-1">
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
-                            <input type="text" class="random_num mt-2" value="11" readonly name="captcha_num_one" id="captcha_num_one" />
+                            <input type="text" class="random_num mt-2" value="{{$num1}}" readonly name="captcha_num_one" id="captcha_num_one" />
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
                             <p class="plus_equal_icon">+</p>
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1 number_div">
-                            <input type="text" class="random_num mt-2" value="3" readonly name="captcha_num_two" id="captcha_num_two" />
+                            <input type="text" class="random_num mt-2" value="{{$num2}}" readonly name="captcha_num_two" id="captcha_num_two" />
                         </div>
                         <div class="col-sm-1 col-lg-1 col-md-1 col-1">
                             <p class="plus_equal_icon">=</p>
