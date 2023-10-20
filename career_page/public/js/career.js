@@ -1,10 +1,16 @@
 $(document).ready(function(){
-    // $("#submit_btn").click(function(){
-    //  console.log("submit");
+    let onsubmit=false;
+    document.getElementById("submit_btn").disabled = false;
+    // console.log(validation.errorList.length
+
+    //     );
+
+    // $("#submit_btn").click(function (e) {
+    //     console.log(validation.errorList.length);
     // });
-
-
-    jQuery("#enquiryForm").validate({
+  
+  var validation= jQuery("#enquiryForm").validate({
+    
         rules: {
             first_name: {
                 required: true,
@@ -69,9 +75,18 @@ $(document).ready(function(){
             },
             addition:{
                 required: "Please enter the addition",
-            }
+            },
+            submitHandler: function (form) {
+                
+                console.log('test');
+                form.submit();
+               
+            },
            
         }
+
+
+       
 
     })
 
@@ -120,5 +135,13 @@ $(document).ready(function(){
         },
         "Invalid captcha."
     );
+ 
+
+    
+
+
+    // var errors = validator.errors(); 
+
+    // console.log(errors);
 
   });
