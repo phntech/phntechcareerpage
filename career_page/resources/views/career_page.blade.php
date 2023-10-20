@@ -7,15 +7,11 @@
     <title>Career Page</title>
 
     <!-- bootstrap cdn -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
@@ -65,10 +61,8 @@ $num2=random_int(0,9);
                         </div>
 
                         <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div">
-                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img"
-                                class="img-fluid desktop_header_img" />
-                            <img src="{{ asset('img/header_img_mob.webp') }}" alt="header_img"
-                                class="img-fluid mobile_header_img" />
+                            <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid desktop_header_img" />
+                            <img src="{{ asset('img/header_img_mob.webp') }}" alt="header_img" class="img-fluid mobile_header_img" />
 
                         </div>
                     </div>
@@ -156,13 +150,11 @@ $num2=random_int(0,9);
                             <p class="plus_equal_icon">=</p>
                         </div>
                         <div class="col-sm-8 col-lg-4 col-md-8 col">
-                            <input type="text" class="form-control focus-input mt-0" placeholder="Enter addition"
-                                name="addition" id="addition">
+                            <input type="text" class="form-control focus-input mt-0" placeholder="Enter addition" name="addition" id="addition">
                         </div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit"
-                            data-toggle="modal">
+                        <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal">
                     </div>
 
                 </form>
@@ -221,14 +213,20 @@ $num2=random_int(0,9);
 
                                         </div>
                                         @if (\Session::has('otpincorrect'))
-                                            <div class="wrong_otp" id="alert_fail_id">
-                                                {!! \Session::get('otpincorrect') !!}
-                                            </div>
+
+                                        <div class="wrong_otp" id="alert_fail_id">
+                                            {!! \Session::get('otpincorrect') !!}
+                                        </div>
                                         @endif
                                         <!-- <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p> -->
                                         <a href="#" class="resend_otp"> Resend OTP</a>
 
-                                </div>
+                                    </div>
+                                    <div class="text-center modal_buttons">
+                                        <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
+                                        <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
+                                    </div>
+                                </form>
                             </div>
                     @endif
                 </div>
