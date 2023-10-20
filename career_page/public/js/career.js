@@ -162,9 +162,9 @@ $(document).ready(function () {
     // console.log(num_input.length);
 
     for (let i = 1; i < num_input.length; i++) {
-        $(num_input[0]).keyup(function(){
+        $(num_input[0]).keydown(function(){
             console.log(num_input[i]);
-           $(num_input[i]).focus().next();
+           $(num_input[i]).next().focus();
         })
     }
 
