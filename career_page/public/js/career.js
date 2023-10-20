@@ -6,14 +6,14 @@ $(document).ready(function () {
     //     );
 
     $("#submit_btn").click(function (e) {
-        
+
 
         if($("#enquiryForm").valid()){
             // $("#exampleModal").css("display", "block")
             // e.preventDefault();
 
              window.location.href="/application"
-            
+
         }else{
             $("#exampleModal").css("display", "none")
         }
@@ -58,7 +58,7 @@ $(document).ready(function () {
             },
             taluka: {
                 required: true,
-             
+
             },
             qualification:{
                 required: true,
@@ -67,7 +67,7 @@ $(document).ready(function () {
                 required: true,
                 additionRule: "",
             }
-           
+
         },
 
         messages: {
@@ -161,21 +161,14 @@ $(document).ready(function () {
         $("#exampleModal").css("display", "none");
     });
 
-    // const id = document.getElementById("num_one");
 
-    // const num_input = document.getElementsByClassName("num_input");
     const num_input = document.querySelectorAll(".num_input");
-    // for (let i = 1; i < num_input.length; i++) {
-    //     $(num_input[0]).keyup(function(){
-    //         console.log(num_input[i]);
-    //        $(num_input[i]).focus().next();
-    //     })
-    // }
+
     num_input.forEach((input, index) => {
         input.addEventListener("input", (event) => {
             console.log("event" + event);
             console.log("index" + index);
-            if (index < num_input.length && input.value.length === 1){
+            if (index < num_input.length-1 && input.value.length === 1){
                 num_input[index + 1].focus();
             }
         });
