@@ -14,13 +14,9 @@
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 
 
-    <!-- animation cdn -->
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-
     <link rel="stylesheet" href="{{ asset('css/career_page.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
+
     <script src="{{ asset('js/career.js') }}"></script>
 </head>
 
@@ -36,7 +32,7 @@
 
                 <div class="header">
                     <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_details_div animate__animated animate__fadeInUp">
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_details_div">
 
                             <p class="header_title">
                                 Get <span style="color:#3C50E0;  text-transform: uppercase;"> IT jobs</span> in your city
@@ -54,7 +50,7 @@
                             </p>
                         </div>
 
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div animate__animated animate__fadeInRight">
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-12 header_img_div">
                             <img src="{{ asset('img/header_img.webp') }}" alt="header_img" class="img-fluid desktop_header_img" />
                             <img src="{{ asset('img/header_img_mob.webp') }}" alt="header_img" class="img-fluid mobile_header_img" />
 
@@ -150,15 +146,15 @@
                         <input type="submit" id="submit_btn" class="submit_btn btn" value="Submit" data-toggle="modal">
                     </div>
                 </form>
-                    <div class="otp_modal">
-                        <div class="modals" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
+                <div class="otp_modal">
+                    <div class="modals" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
 
-                                    <div class="modal_body text-center">
-                                        <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
-                                        <p class="verify_title">Verify mobile number</p>
-                                        <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
+                                <div class="modal_body text-center">
+                                    <img src="{{asset('/img/otp_success_animation.gif')}}" alt="">
+                                    <p class="verify_title">Verify mobile number</p>
+                                    <p class="verify_mob_no">OTP is sent to <span style="color: #00005C;">9876543210</span></p>
                                     <form action="/OTPverify" method="GET">
                                         <div class="row mt-3">
                                             <div class="col-2">
@@ -184,20 +180,23 @@
                                         <p class="otp_time">Your OTP will expire in <span style="font-weight: 500;">00:30</span></p>
                                         <a href="#" class="resend_otp"> Resend OTP</a>
 
-                                    </div>
-                                    <div class="text-center modal_buttons">
-                                        <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
-                                        <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
-                                    </div>
-                                    </form>
                                 </div>
+                                <div class="text-center modal_buttons">
+                                    <button type="button" class="btn cancel_btn mr-3" data-dismiss="modal">CANCEL</button>
+                                    <input type="submit" value="SUBMIT" class="btn otp_submit_btn">
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+                </div>
 
-               
+
             </div>
         </div>
+        <script>
+
+        </script>
     </section>
     <!-- form section end -->
 </body>
