@@ -1,4 +1,10 @@
 $(document).ready(function () {
+
+    // $("#alert_success_id").show("slow").delay(5000).hide("slow");
+    $("#alert_success_id").show().delay(5000).fadeOut();
+    // $("#alert_success_id").show().delay(5000).fadeOut();
+
+
     let onsubmit = false;
 
     $(".email_id").on("input", function () {
@@ -133,20 +139,20 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
 
         messages: {
             first_name: {
-                required: "Please enter first name.",
+                required: "Please enter first name",
             },
             last_name: {
-                required: "Please enter last name.",
+                required: "Please enter last name",
             },
             wtsp_mob_no: {
-                required: "Please enter whatsapp mobile no.",
+                required: "Please enter whatsapp mobile no",
             },
 
             state: {
-                required: "Please select state.",
+                required: "Please select state",
             },
             district: {
-                required: "Please select district.",
+                required: "Please select district",
             },
             taluka: {
                 required: "Please select taluka",
@@ -155,7 +161,7 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
                 required: "Please select qualification",
             },
             addition: {
-                required: "Please enter the addition",
+                required: "Please enter captcha",
             },
             // submitHandler: function (form) {
 
@@ -174,21 +180,21 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
         function (value, element, regexpr) {
             return regexpr.test(value);
         },
-        "Please enter a valid first name."
+        "Please enter a valid first name"
     );
     $.validator.addMethod(
         "lastNameRegx",
         function (value, element, regexpr) {
             return regexpr.test(value);
         },
-        "Please enter a valid last name."
+        "Please enter a valid last name"
     );
     $.validator.addMethod(
         "mobileRegx",
         function (value, element, regexpr) {
             return regexpr.test(value);
         },
-        "Please enter a valid mobile number."
+        "Please enter a valid mobile number"
     );
 
     // $.validator.addMethod(
@@ -218,7 +224,7 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
                 return false;
             }
         },
-        "Invalid captcha."
+        "Please enter valid captch"
     );
 
     $(".cancel_btn").click(function () {

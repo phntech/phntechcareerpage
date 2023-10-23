@@ -77,13 +77,13 @@ $num2=random_int(0,9);
         <div class="container-fluid">
             <div class="container">
                 @if (\Session::has('otpcorrect'))
-                    <div class="alert alert-success text-center" id="alert_success_id">
+                    <div class="alert alert-success " id="alert_success_id">
                         {!! \Session::get('otpcorrect') !!}
                     </div>
                 
                 @endif
                 @if (\Session::has('exist'))
-                    <div class="alert alert-danger text-center" id="alert_success_id">
+                    <div class="alert alert-danger" id="alert_success_id">
                         {!! \Session::get('exist') !!}
                     </div>
                 
@@ -94,10 +94,10 @@ $num2=random_int(0,9);
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name" value="{{ \Session::has('data') ? session('data.first_name') : old('first_name') }}" onkeydown="return /[a-zA-Z]/i.test(event.key)">
+                            <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name" value="{{ \Session::has('data') ? session('data.first_name') : old('first_name') }}" onkeydown="return /[a-zA-Z]/i.test(event.key)" maxlength="46">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="Last name*" name="last_name" id="last_name" value="{{ \Session::has('data') ? session('data.last_name') : old('last_name') }}" onkeydown="return /[a-zA-Z]/i.test(event.key)">
+                            <input type="text" class="form-control" placeholder="Last name*" name="last_name" id="last_name" value="{{ \Session::has('data') ? session('data.last_name') : old('last_name') }}" onkeydown="return /[a-zA-Z]/i.test(event.key)" maxlength="46">
                         </div>
                     </div>
                     <div class="row">
@@ -105,7 +105,7 @@ $num2=random_int(0,9);
                             <input type="number" class="form-control" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}" maxlength="10" onkeydown="return validateFirstDigit(event)">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control email_id" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}">
+                            <input type="text" class="form-control email_id" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}" maxlength="62">
                             <p id="error_email" class="error"> </p>
                         </div>                        
                     </div>
