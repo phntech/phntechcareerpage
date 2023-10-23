@@ -63,7 +63,12 @@ class CareerController extends Controller
                 $applicants_new->state = $request->state;
                 $applicants_new->district = $request->district;
                 $applicants_new->taluka = $request->taluka;
-                $applicants_new->qualification = $request->qualification;
+                
+                if($request->qualification!=""){
+                    $applicants_new->qualification=$request->other;
+                   }else{
+                    $applicants_new->qualification = $request->qualification;
+                }
     
                 Session::put('status', $status);
                 Session::put('otp', $otp);
@@ -74,7 +79,14 @@ class CareerController extends Controller
                 Session::put('state', $request->state);
                 Session::put('district', $request->district);
                 Session::put('taluka', $request->taluka);
-                Session::put('qualification', $request->qualification);
+               
+                if($request->qualification!=""){
+                    Session::put('qualification', $request->other);
+                }else{
+                    Session::put('qualification', $request->qualification);
+                }
+                // Session::put('other', $request->other);
+
     
                 return redirect()->back()->withinput()->with('status', $status)->with('data',$applicants_new);
     
@@ -104,6 +116,7 @@ class CareerController extends Controller
         $applicant->district =$district= Session::get('district');
         $applicant->taluka =$taluka= Session::get('taluka');
         $applicant->qualification =$qualification= Session::get('qualification');
+        // $applicant->qualification =$qualification= Session::get('qualification');
 
         $otp = Session::get('otp');
 

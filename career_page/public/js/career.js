@@ -100,6 +100,8 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
         $(this).addClass("notfocussed");
     });
 
+    $("#other_field").css("display", "none")
+
     var validation = jQuery("#enquiryForm").validate({
         rules: {
             first_name: {
@@ -131,6 +133,9 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
             qualification: {
                 required: true,
             },
+            other:{
+                required: true,
+            },
             addition: {
                 required: true,
                 additionRule: "",
@@ -159,6 +164,9 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
             },
             qualification: {
                 required: "Please select qualification",
+            },
+            other: {
+                required: "Please enter your qualification",
             },
             addition: {
                 required: "Please enter captcha",
@@ -224,7 +232,7 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
                 return false;
             }
         },
-        "Please enter valid captch"
+        "Please enter valid captcha"
     );
 
     $(".cancel_btn").click(function () {

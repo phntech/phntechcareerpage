@@ -140,14 +140,14 @@ $num2=random_int(0,9);
                                 <option value="iti" {{ 'iti' === old('qualification') ? 'selected' : '' }}>ITI</option>
                                 <option value="diploma" {{ 'diploma' === old('qualification') ? 'selected' : '' }}>Diploma</option>
                                 <option value="mcvc" {{ 'mcvc' === old('qualification') ? 'selected' : '' }}>MCVC</option>
-                                <option value="Other" {{ 'Other' === old('qualification') ? 'selected' : '' }}>
-                                    Others(Please specify)</option>
+                                <option value="Other" {{ \Session::has('success') ? session('success.other') : old('other') }}>
+                                    Others(Please specify)*</option>
                             </select>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 col-12">
                             <input type="text" class="form-control form-inputs"
                                 value="{{ \Session::has('success') ? session('success.other') : old('other') }}"
-                                placeholder="Other" name="qualification" id="other_field"/>
+                                placeholder="Other" name="other" id="other_field"/>
                             <span class="other_error_msg"></span>
                         </div>
                     </div>
