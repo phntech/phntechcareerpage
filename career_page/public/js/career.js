@@ -68,8 +68,9 @@ var num_six=document.getElementById("num_six").value;
 
 if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num_six===""){
     e.preventDefault();
-    // console.log("otp")
-    $(".wrong_otp").text("Please enter a OTP.");
+    console.log("otp")
+    $(".empty_otp").text("Please enter a OTP.");
+    $(".wrong_otp").css("display", "none");
 }
     });
 
@@ -261,17 +262,4 @@ function onlyNumberKey(evt) {
     var ASCIICode = evt.which ? evt.which : evt.keyCode;
     if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) return false;
     return true;
-}
-function validateFirstDigit(event) {
-    var keyCode = event.keyCode || event.which;
-    var key = String.fromCharCode(keyCode);
-
-    if (/^\d$/.test(key)) {
-        var digit = parseInt(key);
-
-        if (event.target.value.length === 0 && (digit < 7 || digit > 9)) {
-            event.preventDefault();
-            return false;
-        }
-    }
 }

@@ -175,7 +175,7 @@ $num2=random_int(0,9);
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
-                                    <form method="POST" action="/OTPverify" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                                    <form method="POST" action="/OTPverify" >
                                         @csrf
                                         <div class="modal_body text-center">
                                             <img src="{{ asset('/img/otp_success_animation.gif') }}" alt="">
@@ -206,7 +206,9 @@ $num2=random_int(0,9);
                                                                 <input type="text" name="num_six" id="num_six" data-previous="num_five" class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
                                                             </div>
                                                         </div>
-                                                   
+                                                        <div class="empty_otp" id="alert_fail_id">
+                                                    
+                                                </div>
                                                     
                                             @if (\Session::has('otpincorrect'))
                                                 <div class="wrong_otp" id="alert_fail_id">
