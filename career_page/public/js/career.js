@@ -4,7 +4,7 @@ $(document).ready(function () {
     $(".email_id").on("input", function () {
         var inputValues = $(this).val();
         var regex =
-            /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+[.-][a-zA-Z][a-z.A-Z]+$/;
         if (!regex.test(inputValues)) {
             $("#error_email").css({
                 display: "inline",

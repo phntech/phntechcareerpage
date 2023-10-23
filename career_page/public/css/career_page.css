@@ -130,6 +130,9 @@ font-style: normal;
 font-weight: 700;
 line-height: 24px; 
 }
+#email{
+    margin-bottom: 10px;
+}
 .form-control.focussed {
     border-radius: 4px;
     border: 1px solid #bdc0d7;
