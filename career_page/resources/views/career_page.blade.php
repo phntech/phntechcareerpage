@@ -94,16 +94,15 @@ $num2=random_int(0,9);
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name" value="{{ \Session::has('data') ? session('data.first_name') : old('first_name') }}">
+                            <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name" value="{{ \Session::has('data') ? session('data.first_name') : old('first_name') }}" onkeydown="return /[a-zA-Z]/i.test(event.key)">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="Last name*" name="last_name" id="last_name" value="{{ \Session::has('data') ? session('data.last_name') : old('last_name') }}">
-
+                            <input type="text" class="form-control" placeholder="Last name*" name="last_name" id="last_name" value="{{ \Session::has('data') ? session('data.last_name') : old('last_name') }}" onkeydown="return /[a-zA-Z]/i.test(event.key)">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}">
+                            <input type="number" class="form-control" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <input type="text" class="form-control email_id" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}">
