@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
-    // $("#alert_success_id").show("slow").delay(5000).hide("slow");
+    
     $("#alert_success_id").show().delay(5000).fadeOut();
-    // $("#alert_success_id").show().delay(5000).fadeOut();
+   
 
 
     let onsubmit = false;
@@ -10,19 +10,19 @@ $(document).ready(function () {
     $(".email_id").on("input", function () {
         var inputValues = $(this).val();
         var regex =
-        /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+[.-][a-zA-Z][a-z.A-Z]+$/;
+            /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+[.-][a-zA-Z][a-z.A-Z]+$/;
         if (!regex.test(inputValues)) {
             $("#error_email").css({
                 display: "inline",
                 "margin-top": "10px",
             });
-           
-            
+
+
             $("#error_email").text("Please enter a valid email.");
-            
+
             return false;
         } else {
-           
+
             $("#error_email").text("");
             $("#error_email").css("display", "none");
 
@@ -32,12 +32,10 @@ $(document).ready(function () {
 
 
 
-    // $(".email_id").onChange(function(){
-    //     $("#error_email").html("Hello <b>world!</b>");
-    //   });
+   
 
     document.getElementById("submit_btn").disabled = false;
-    // console.log(validation.errorList.length
+    
 
     //     );
 
@@ -50,6 +48,12 @@ $(document).ready(function () {
     };
 
     $("#submit_btn").click(function (e) {
+
+        
+
+
+        console.log("hello");
+
         if ($("#enquiryForm").valid()) {
             // $("#exampleModal").css("display", "block")
             // e.preventDefault();
@@ -61,23 +65,23 @@ $(document).ready(function () {
     });
 
     $(".otp_submit_btn").click(function (e) {
-       
-
-var num_one=document.getElementById("num_one").value;
-var num_two=document.getElementById("num_two").value;
-var num_three=document.getElementById("num_three").value;
-var num_four=document.getElementById("num_four").value;
-var num_five=document.getElementById("num_five").value;
-var num_six=document.getElementById("num_six").value;
 
 
+        var num_one = document.getElementById("num_one").value;
+        var num_two = document.getElementById("num_two").value;
+        var num_three = document.getElementById("num_three").value;
+        var num_four = document.getElementById("num_four").value;
+        var num_five = document.getElementById("num_five").value;
+        var num_six = document.getElementById("num_six").value;
 
-if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num_six===""){
-    e.preventDefault();
-    console.log("otp")
-    $(".empty_otp").text("Please enter OTP.");
-    $(".wrong_otp").css("display", "none");
-}
+
+
+        if (num_one === "" || num_two === "" || num_three === "" || num_four === "" || num_five === "" || num_six === "") {
+            e.preventDefault();
+            console.log("otp")
+            $(".empty_otp").text("Please enter OTP.");
+            $(".wrong_otp").css("display", "none");
+        }
     });
 
     // $("#resendotp").click(function (e) {
@@ -117,7 +121,7 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
             // email: {
             //     required: false,
             //     emailRegx:
-            //         /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+[.-][a-zA-Z][a-z.A-Z]+$/,
+            //     /^$/,
             // },
             state: {
                 required: true,
@@ -173,7 +177,7 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
     });
 
 
-    
+
 
     $.validator.addMethod(
         "firstNameRegx",
@@ -199,13 +203,13 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
 
     // $.validator.addMethod(
     //     "emailRegx",
-
-    //     emailRegx="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$",
     //     function (value, element, regexpr) {
     //         return regexpr.test(value);
     //     },
-    //     "Please enter a valid email."
+    //     "Please enter a valid email"
     // );
+
+
 
     $.validator.addMethod(
         "additionRule",
@@ -244,7 +248,7 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
             }
         }
     });
-    
+
     $('.num_input').on('keydown', function (e) {
         if (e.keyCode === 8) {
             const currentValue = $(this).val();
@@ -258,8 +262,8 @@ if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num
             }
         }
     });
-    
-    
+
+
     // var errors = validator.errors();
 
     // console.log(errors);

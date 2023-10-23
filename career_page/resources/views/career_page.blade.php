@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
-
+    
 
     <link rel="stylesheet" href="{{ asset('css/career_page.css') }}">
     <link rel="stylesheet" href="{{ asset('css/animation.css') }}">
@@ -102,7 +102,7 @@ $num2=random_int(0,9);
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="number" class="form-control" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}" maxlength="10" onkeydown="return validateFirstDigit(event)">
+                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}" onkeydown="return validateFirstDigit(event)">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <input type="text" class="form-control email_id" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}" maxlength="62">
