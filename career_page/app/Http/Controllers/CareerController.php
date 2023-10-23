@@ -126,7 +126,7 @@ class CareerController extends Controller
             // }
 
         } else {
-            return redirect()->back()->with('otpincorrect', "Sorry, The OTP entered is incorrect, Please verify and try again")->with('data',$applicant);
+            return redirect()->back()->with('otpincorrect', "Sorry, the OTP entered is incorrect. Please verify and try again")->with('data',$applicant);
         }
 
 

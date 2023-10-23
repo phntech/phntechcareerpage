@@ -86,6 +86,9 @@ select {
     color: red;
     margin-top: 10px;
 }
+#error_email{
+    display: none;
+}
 .captcha_title {
     color: #00005c;
     font-family: Poppins;

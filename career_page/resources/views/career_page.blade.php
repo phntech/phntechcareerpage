@@ -77,7 +77,7 @@ $num2=random_int(0,9);
         <div class="container-fluid">
             <div class="container">
                 @if (\Session::has('otpcorrect'))
-                    <div class="alert alert-danger text-center" id="alert_success_id">
+                    <div class="alert alert-success text-center" id="alert_success_id">
                         {!! \Session::get('otpcorrect') !!}
                     </div>
                 
@@ -106,9 +106,9 @@ $num2=random_int(0,9);
                             <input type="text" class="form-control" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}">
-
-                        </div>
+                            <input type="text" class="form-control email_id" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}">
+                            <p id="error_email" class="error"> </p>
+                        </div>                        
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">

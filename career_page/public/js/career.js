@@ -1,18 +1,39 @@
 $(document).ready(function () {
     let onsubmit = false;
+
+    $(".email_id").on("input", function () {
+        var inputValues = $(this).val();
+        var regex =
+            /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!regex.test(inputValues)) {
+            $("#error_email").css({
+                display: "inline",
+                "margin-top": "10px",
+            });
+            $("#error_email").text("Please enter a valid email.");
+            return false;
+        } else {
+            $("#error_email").text("");
+            $("#error_email").css("display", "none");
+        }
+    });
+
+    // $(".email_id").onChange(function(){
+    //     $("#error_email").html("Hello <b>world!</b>");
+    //   });
+
     document.getElementById("submit_btn").disabled = false;
     // console.log(validation.errorList.length
 
     //     );
 
-    function disableBack() { 
-        window.history.forward() 
-    } 
-    window.onload = disableBack(); 
-    window.onpageshow = function(e) { 
-        if (e.persisted) 
-            disableBack(); 
+    function disableBack() {
+        window.history.forward();
     }
+    window.onload = disableBack();
+    window.onpageshow = function (e) {
+        if (e.persisted) disableBack();
+    };
 
     $("#submit_btn").click(function (e) {
         if ($("#enquiryForm").valid()) {
@@ -33,6 +54,7 @@ $(document).ready(function () {
     // $("#submit_btn").click(function (e) {
     //     console.log(validation.errorList.length);
     // });
+
     $(".focus-input").focus(function () {
         if (this.type == "text") {
             $(this).addClass("focussed").val("");
@@ -58,11 +80,11 @@ $(document).ready(function () {
                 required: true,
                 mobileRegx: /^[6789][0123456789]{9}$/,
             },
-            email: {
-               
-                emailRegx:
-                    /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+[.-][a-zA-Z][a-z.A-Z]+$/,
-            },
+            // email: {
+            //     required: false,
+            //     emailRegx:
+            //         /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+[.-][a-zA-Z][a-z.A-Z]+$/,
+            // },
             state: {
                 required: true,
             },
@@ -91,7 +113,7 @@ $(document).ready(function () {
             wtsp_mob_no: {
                 required: "Please enter whatsapp mobile no.",
             },
-            
+
             state: {
                 required: "Please select state.",
             },
@@ -138,13 +160,15 @@ $(document).ready(function () {
         "Please enter a valid mobile number."
     );
 
-    $.validator.addMethod(
-        "emailRegx",
-        function (value, element, regexpr) {
-            return regexpr.test(value);
-        },
-        "Please enter a valid email."
-    );
+    // $.validator.addMethod(
+    //     "emailRegx",
+
+    //     emailRegx="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$",
+    //     function (value, element, regexpr) {
+    //         return regexpr.test(value);
+    //     },
+    //     "Please enter a valid email."
+    // );
 
     $.validator.addMethod(
         "additionRule",
@@ -169,17 +193,16 @@ $(document).ready(function () {
     $(".cancel_btn").click(function () {
         $("#exampleModal").css("display", "none");
     });
+    const numInputs = document.querySelectorAll(".num_input");
 
-    const num_input = document.querySelectorAll(".num_input");
-
-    num_input.forEach((input, index) => {
+    numInputs.forEach((input, index) => {
         input.addEventListener("input", (event) => {
-            console.log("event" + event);
-            console.log("index" + index);
-            if (index < num_input.length - 1 && input.value.length === 1) {
-                num_input[index + 1].focus();
-            } else if (index > 0 && input.value.length === 0) {
-                num_input[index - 1].focus();
+            if (event.target.value.length === 1) {
+                if (index < numInputs.length - 1) {
+                    numInputs[index + 1].focus();
+                }
+            } else if (event.target.value.length === 0 && index > 0) {
+                numInputs[index - 1].focus();
             }
         });
     });
@@ -193,4 +216,3 @@ function onlyNumberKey(evt) {
     if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) return false;
     return true;
 }
-
