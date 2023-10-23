@@ -354,6 +354,9 @@ input[type="text"]:focus {
         margin-left: -1rem;
         margin-top: -1rem;
     }
+    .logo img{
+        width: 120px;
+    }
     .Form_section {
         margin-top: 0;
     }
