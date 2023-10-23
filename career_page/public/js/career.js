@@ -193,7 +193,7 @@ $(document).ready(function () {
     $(".cancel_btn").click(function () {
         $("#exampleModal").css("display", "none");
     });
-    
+
     $('.num_input').on('input', function () {
         if ($(this).val().length === 1) {
             const nextFieldId = $(this).data('next');
