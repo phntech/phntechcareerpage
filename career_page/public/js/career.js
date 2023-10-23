@@ -75,7 +75,7 @@ var num_six=document.getElementById("num_six").value;
 if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num_six===""){
     e.preventDefault();
     console.log("otp")
-    $(".empty_otp").text("Please enter a OTP.");
+    $(".empty_otp").text("Please enter OTP.");
     $(".wrong_otp").css("display", "none");
 }
     });
@@ -268,4 +268,18 @@ function onlyNumberKey(evt) {
     var ASCIICode = evt.which ? evt.which : evt.keyCode;
     if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) return false;
     return true;
+}
+function ShowOptions(answer) {
+    console.log(answer.value);
+
+    if (answer.value === "Other") {
+        document.getElementById("other_field").style.display = "inline";
+        document.getElementById("other_field-error").style.display = "inline";
+        console.log("visible"+answer.value);
+
+    } else {
+        document.getElementById("other_field").style.display = "none";
+        document.getElementById("other_field-error").style.display = "none";
+        console.log("hidden"+answer.value);
+    }
 }

@@ -131,7 +131,7 @@ $num2=random_int(0,9);
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control" name="qualification" id="qualification_dropdown">
+                            <select class="form-control" name="qualification" id="qualification_dropdown" onchange="ShowOptions(this)">
                                 <option value="{{ \Session::has('data') ? session('data.qualification') : '' }}">{{ \Session::has('data') ? session('data.qualification') : "Highest qualification*" }}</option>
                                 <option value="ssc" {{ 'ssc' === old('qualification') ? 'selected' : '' }}>SSC</option>
                                 <option value="hsc" {{ 'hsc' === old('qualification') ? 'selected' : '' }}>HSC</option>
@@ -140,7 +140,15 @@ $num2=random_int(0,9);
                                 <option value="iti" {{ 'iti' === old('qualification') ? 'selected' : '' }}>ITI</option>
                                 <option value="diploma" {{ 'diploma' === old('qualification') ? 'selected' : '' }}>Diploma</option>
                                 <option value="mcvc" {{ 'mcvc' === old('qualification') ? 'selected' : '' }}>MCVC</option>
+                                <option value="Other" {{ 'Other' === old('qualification') ? 'selected' : '' }}>
+                                    Others(Please specify)</option>
                             </select>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-6 col-12">
+                            <input type="text" class="form-control form-inputs"
+                                value="{{ \Session::has('success') ? session('success.other') : old('other') }}"
+                                placeholder="Other" name="other" id="other_field"/>
+                            <span class="other_error_msg"></span>
                         </div>
                     </div>
                     <p class="captcha_title">Captcha</p>
