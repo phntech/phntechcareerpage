@@ -242,3 +242,16 @@ function onlyNumberKey(evt) {
     if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) return false;
     return true;
 }
+function validateFirstDigit(event) {
+    var keyCode = event.keyCode || event.which;
+    var key = String.fromCharCode(keyCode);
+
+    if (/^\d$/.test(key)) {
+        var digit = parseInt(key);
+
+        if (event.target.value.length === 0 && (digit < 7 || digit > 9)) {
+            event.preventDefault();
+            return false;
+        }
+    }
+}
