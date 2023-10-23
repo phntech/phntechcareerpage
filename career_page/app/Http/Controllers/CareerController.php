@@ -13,73 +13,79 @@ class CareerController extends Controller
     public function submitApplication(Request $request)
     {
         // return "formsubmitted";
-        // $this->x ='22';
+        // $this->x ='22'
+
         $mobile_no = $request->wtsp_mob_no;
+        $users = DB::table('applicants')->where('wtsp_mob_no','=',$mobile_no)->count();
+        if($users){
+            return redirect()->back()->with('exist', "User already exist with us!");
+        }else{
 
-        $otp = random_int(100000, 999999);
+            $otp = random_int(100000, 999999);
 
-        $msg = $otp . " is the OTP to login to your PHN Career account. DO NOT share the OTP with anyone. - PHN Technology";
-        // Account details
-        $apiKey = urlencode('NTM0ZjM5NDI3NTdhNjgzNjU4NDg1MTY3NTQ3MjZmNzE=');
-
-        // Message details
-        $numbers = array("91" . $mobile_no);
-        $sender = urlencode('PHNTEC');
-        $message = rawurlencode($msg);
-
-        $numbers = implode(',', $numbers);
-
-        // Prepare data for POST request
-        $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
-
-        // Send the POST request with cURL
-        $ch = curl_init('https://api.textlocal.in/send/');
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        curl_close($ch);
-
-        // Process your response here
-        // echo $response.balance;
-        $data = json_decode($response, true);
-
-        $status = $data['status'];
-        // $district=$request->district;
-        // $taluka=$request->taluka;
-        // return $status;
-
-        if ($status === "success") {
-            $applicants_new=new Applicant;
-            $applicants_new->first_name = $request->first_name;
-            $applicants_new->last_name = $request->last_name;
-            $applicants_new->wtsp_mob_no = $request->wtsp_mob_no;
-            $applicants_new->email = $request->email;
-            $applicants_new->state = $request->state;
-            $applicants_new->district = $request->district;
-            $applicants_new->taluka = $request->taluka;
-            $applicants_new->qualification = $request->qualification;
-
-            Session::put('status', $status);
-            Session::put('otp', $otp);
-            Session::put('first_name', $request->first_name);
-            Session::put('last_name', $request->last_name);
-            Session::put('wtsp_mob_no', $request->wtsp_mob_no);
-            Session::put('email', $request->email);
-            Session::put('state', $request->state);
-            Session::put('district', $request->district);
-            Session::put('taluka', $request->taluka);
-            Session::put('qualification', $request->qualification);
-
-            return redirect()->back()->withinput()->with('status', $status)->with('data',$applicants_new);
+            $msg = $otp . " is the OTP to login to your PHN Career account. DO NOT share the OTP with anyone. - PHN Technology";
+            // Account details
+            $apiKey = urlencode('NTM0ZjM5NDI3NTdhNjgzNjU4NDg1MTY3NTQ3MjZmNzE=');
+    
+            // Message details
+            $numbers = array("91" . $mobile_no);
+            $sender = urlencode('PHNTEC');
+            $message = rawurlencode($msg);
+    
+            $numbers = implode(',', $numbers);
+    
+            // Prepare data for POST request
+            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+    
+            // Send the POST request with cURL
+            $ch = curl_init('https://api.textlocal.in/send/');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+            curl_close($ch);
+    
+            // Process your response here
+            // echo $response.balance;
+            $data = json_decode($response, true);
+    
+            $status = $data['status'];
+            // $district=$request->district;
+            // $taluka=$request->taluka;
+            // return $status;
+    
+            if ($status === "success") {
+                $applicants_new=new Applicant;
+                $applicants_new->first_name = $request->first_name;
+                $applicants_new->last_name = $request->last_name;
+                $applicants_new->wtsp_mob_no = $request->wtsp_mob_no;
+                $applicants_new->email = $request->email;
+                $applicants_new->state = $request->state;
+                $applicants_new->district = $request->district;
+                $applicants_new->taluka = $request->taluka;
+                $applicants_new->qualification = $request->qualification;
+    
+                Session::put('status', $status);
+                Session::put('otp', $otp);
+                Session::put('first_name', $request->first_name);
+                Session::put('last_name', $request->last_name);
+                Session::put('wtsp_mob_no', $request->wtsp_mob_no);
+                Session::put('email', $request->email);
+                Session::put('state', $request->state);
+                Session::put('district', $request->district);
+                Session::put('taluka', $request->taluka);
+                Session::put('qualification', $request->qualification);
+    
+                return redirect()->back()->withinput()->with('status', $status)->with('data',$applicants_new);
+    
+            }
 
         }
+        
 
-        // //   return $newotp;
+       
 
-        //     }else{
-        //         return "wrong otpz";
-        //     }
+
 
     }
 
@@ -111,13 +117,13 @@ class CareerController extends Controller
 
         if ($otp == $newotp) {
             
-            $users = DB::table('applicants')->where('wtsp_mob_no','=',$wtsp_mob_no)->count();
-            if($users){
-                return redirect()->back()->with('exist', "User aleredy exist with us");
-            }else{
+            // $users = DB::table('applicants')->where('wtsp_mob_no','=',$wtsp_mob_no)->count();
+            // if($users){
+            //     return redirect()->back()->with('exist', "User aleredy exist with us");
+            // }else{
             DB::insert('insert into applicants (`first_name`, `last_name`, `wtsp_mob_no`, `email`, `state`, `district`, `taluka`, `qualification`) values (?, ?,?,?,?,?,?,?)', [$first_name, $last_name, $wtsp_mob_no, $email, $state, $district, $taluka, $qualification]);
-            return redirect()->back()->with('otpcorrect', "Thanks we will contact you soon");
-            }
+            return redirect()->back()->with('otpcorrect', "Thanks we will contact you soon !");
+            // }
 
         } else {
             return redirect()->back()->with('otpincorrect', "Sorry, The OTP entered is incorrect, Please verify and try again")->with('data',$applicant);

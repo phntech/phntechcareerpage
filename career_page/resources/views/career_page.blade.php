@@ -83,7 +83,7 @@ $num2=random_int(0,9);
                 
                 @endif
                 @if (\Session::has('exist'))
-                    <div class="alert alert-success text-center" id="alert_success_id">
+                    <div class="alert alert-danger text-center" id="alert_success_id">
                         {!! \Session::get('exist') !!}
                     </div>
                 
