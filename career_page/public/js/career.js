@@ -59,7 +59,7 @@ $(document).ready(function () {
                 mobileRegx: /^[6789][0123456789]{9}$/,
             },
             email: {
-                required: true,
+               
                 emailRegx:
                     /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+[.-][a-zA-Z][a-z.A-Z]+$/,
             },
@@ -89,11 +89,9 @@ $(document).ready(function () {
                 required: "Please enter last name.",
             },
             wtsp_mob_no: {
-                required: "Please enter mobile no.",
+                required: "Please enter whatsapp mobile no.",
             },
-            email: {
-                required: "Please enter email id.",
-            },
+            
             state: {
                 required: "Please select state.",
             },
@@ -101,7 +99,7 @@ $(document).ready(function () {
                 required: "Please select district.",
             },
             taluka: {
-                required: "Please enter taluka",
+                required: "Please select taluka",
             },
             qualification: {
                 required: "Please select qualification",

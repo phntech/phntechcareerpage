@@ -94,19 +94,19 @@ $num2=random_int(0,9);
                     @csrf
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control focus-input" placeholder="First name*" name="first_name" id="first_name" value="{{ \Session::has('data') ? session('data.first_name') : old('first_name') }}">
+                            <input type="text" class="form-control" placeholder="First name*" name="first_name" id="first_name" value="{{ \Session::has('data') ? session('data.first_name') : old('first_name') }}">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control focus-input" placeholder="Last name*" name="last_name" id="last_name" value="{{ \Session::has('data') ? session('data.last_name') : old('last_name') }}">
+                            <input type="text" class="form-control" placeholder="Last name*" name="last_name" id="last_name" value="{{ \Session::has('data') ? session('data.last_name') : old('last_name') }}">
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control focus-input" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}">
+                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control focus-input" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}">
+                            <input type="text" class="form-control" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}">
 
                         </div>
                     </div>
@@ -132,7 +132,7 @@ $num2=random_int(0,9);
                             </select>
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <select class="form-control focus-input" name="qualification" id="qualification_dropdown">
+                            <select class="form-control" name="qualification" id="qualification_dropdown">
                                 <option value="{{ \Session::has('data') ? session('data.qualification') : '' }}">{{ \Session::has('data') ? session('data.qualification') : "Highest qualification*" }}</option>
                                 <option value="ssc" {{ 'ssc' === old('qualification') ? 'selected' : '' }}>SSC</option>
                                 <option value="hsc" {{ 'hsc' === old('qualification') ? 'selected' : '' }}>HSC</option>
@@ -159,7 +159,7 @@ $num2=random_int(0,9);
                             <p class="plus_equal_icon">=</p>
                         </div>
                         <div class="col-sm-8 col-lg-4 col-md-8 col">
-                            <input type="text" class="form-control focus-input mt-0" placeholder="Enter addition" name="addition" id="addition">
+                            <input type="text" class="form-control mt-0" placeholder="Enter addition" name="addition" id="addition">
                         </div>
                     </div>
                     <div class="text-center">
