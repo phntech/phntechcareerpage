@@ -290,6 +290,9 @@ input[type="text"]:focus {
     margin-bottom: 32px;
     margin-top: 24px;
 }
+#other_field{
+    display: none;
+}
 
 /* Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {

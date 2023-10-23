@@ -147,7 +147,7 @@ $num2=random_int(0,9);
                         <div class="col-sm-12 col-md-6 col-lg-6 col-12">
                             <input type="text" class="form-control form-inputs"
                                 value="{{ \Session::has('success') ? session('success.other') : old('other') }}"
-                                placeholder="Other" name="other" id="other_field"/>
+                                placeholder="Other" name="qualification" id="other_field"/>
                             <span class="other_error_msg"></span>
                         </div>
                     </div>

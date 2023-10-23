@@ -272,14 +272,19 @@ function onlyNumberKey(evt) {
 function ShowOptions(answer) {
     console.log(answer.value);
 
-    if (answer.value === "Other") {
-        document.getElementById("other_field").style.display = "inline";
-        document.getElementById("other_field-error").style.display = "inline";
-        console.log("visible"+answer.value);
-
+    if (answer.value == "Other") {
+        $("#other_field").css({
+            display: "inline",
+        });
+        $("#other_field-error").css({
+            display: "inline",
+        });
     } else {
-        document.getElementById("other_field").style.display = "none";
-        document.getElementById("other_field-error").style.display = "none";
-        console.log("hidden"+answer.value);
+        $("#other_field").css({
+            display: "none",
+        });
+        $("#other_field-error").css({
+            display: "none",
+        });
     }
 }
