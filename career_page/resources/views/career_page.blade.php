@@ -102,7 +102,7 @@ $num2=random_int(0,9);
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
-                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*" maxlength="10" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}" onkeydown="return validateFirstDigit(event)">
+                            <input type="text" class="form-control" placeholder="WhatsApp mobile number*" name="wtsp_mob_no" id="wtsp_mob_no" value="{{ \Session::has('data') ? session('data.wtsp_mob_no') : old('wtsp_mob_no') }}" maxlength="10" onkeydown="return validateFirstDigit(event)" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 45">
                         </div>
                         <div class="col-sm-6 col-lg-6 col-md-6 col-12">
                             <input type="text" class="form-control email_id" placeholder="Email" name="email" id="email" value="{{ \Session::has('data') ? session('data.email') : old('email') }}" maxlength="62">
@@ -140,14 +140,14 @@ $num2=random_int(0,9);
                                 <option value="iti" {{ 'iti' === old('qualification') ? 'selected' : '' }}>ITI</option>
                                 <option value="diploma" {{ 'diploma' === old('qualification') ? 'selected' : '' }}>Diploma</option>
                                 <option value="mcvc" {{ 'mcvc' === old('qualification') ? 'selected' : '' }}>MCVC</option>
-                                <option value="Other" {{ 'Other' === old('qualification') ? 'selected' : '' }}>
-                                    Others(Please specify)</option>
+                                <option value="Other" {{ \Session::has('success') ? session('success.other') : old('other') }}>
+                                    Others(Please specify)*</option>
                             </select>
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-6 col-12">
                             <input type="text" class="form-control form-inputs"
                                 value="{{ \Session::has('success') ? session('success.other') : old('other') }}"
-                                placeholder="Other" name="qualification" id="other_field"/>
+                                placeholder="Other" name="other" id="other_field"/>
                             <span class="other_error_msg"></span>
                         </div>
                     </div>

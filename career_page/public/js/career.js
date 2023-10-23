@@ -104,6 +104,8 @@ $(document).ready(function () {
         $(this).addClass("notfocussed");
     });
 
+    $("#other_field").css("display", "none")
+
     var validation = jQuery("#enquiryForm").validate({
         rules: {
             first_name: {
@@ -135,6 +137,9 @@ $(document).ready(function () {
             qualification: {
                 required: true,
             },
+            other:{
+                required: true,
+            },
             addition: {
                 required: true,
                 additionRule: "",
@@ -163,6 +168,9 @@ $(document).ready(function () {
             },
             qualification: {
                 required: "Please select qualification",
+            },
+            other: {
+                required: "Please enter your qualification",
             },
             addition: {
                 required: "Please enter captcha",
@@ -228,7 +236,7 @@ $(document).ready(function () {
                 return false;
             }
         },
-        "Please enter valid captch"
+        "Please enter valid captcha"
     );
 
     $(".cancel_btn").click(function () {
@@ -290,5 +298,18 @@ function ShowOptions(answer) {
         $("#other_field-error").css({
             display: "none",
         });
+    }
+}
+function validateFirstDigit(event) {
+    var keyCode = event.keyCode || event.which;
+    var key = String.fromCharCode(keyCode);
+
+    if (/^\d$/.test(key)) {
+        var digit = parseInt(key);
+
+        if (event.target.value.length === 0 && (digit < 7 || digit > 9)) {
+            event.preventDefault();
+            return false;
+        }
     }
 }
