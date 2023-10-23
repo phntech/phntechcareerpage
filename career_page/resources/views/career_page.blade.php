@@ -184,34 +184,31 @@ $num2=random_int(0,9);
                                             <p class="verify_mob_no">OTP is sent to <span
                                                     style="color: #00005C;"> {!! \Session::get('wtsp_mob_no') !!}</span></p>
 
+                                        
 
-
-                                            <div class="row mt-3 mb-3">
-                                                <div class="col-2">
-                                                    <input type="text" name="num_one" id="num_one"
-                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
-                                                </div>
-                                                <div class="col-2">
-                                                    <input type="text" name="num_two" id="num_two"
-                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
-                                                </div>
-                                                <div class="col-2">
-                                                    <input type="text" name="num_three" id="num_three"
-                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
-                                                </div>
-                                                <div class="col-2">
-                                                    <input type="text" name="num_four" id="num_four"
-                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
-                                                </div>
-                                                <div class="col-2">
-                                                    <input type="text" name="num_five" id="num_five"
-                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
-                                                </div>
-                                                <div class="col-2">
-                                                    <input type="text" name="num_six" id="num_six"
-                                                        class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
-                                                </div>
-                                            </div>
+                                                    <form method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="off">
+                                                        <div class="row mt-3 mb-3">
+                                                            <div class="col-2">
+                                                                <input type="text" name="num_one" id="num_one" data-next="num_two" class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <input type="text" name="num_two" id="num_two" data-next="num_three" data-previous="num_one" class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <input type="text" name="num_three" id="num_three" data-next="num_four" data-previous="num_two" class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <input type="text" name="num_four" id="num_four" data-next="num_five" data-previous="num_three" class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <input type="text" name="num_five" id="num_five" data-next="num_six" data-previous="num_four" class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <input type="text" name="num_six" id="num_six" data-previous="num_five" class="num_input" maxlength="1" onkeypress="return onlyNumberKey(event)">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    
                                             @if (\Session::has('otpincorrect'))
                                                 <div class="wrong_otp" id="alert_fail_id">
                                                     {!! \Session::get('otpincorrect') !!}

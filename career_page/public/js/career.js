@@ -193,20 +193,36 @@ $(document).ready(function () {
     $(".cancel_btn").click(function () {
         $("#exampleModal").css("display", "none");
     });
-    const numInputs = document.querySelectorAll(".num_input");
-
-    numInputs.forEach((input, index) => {
-        input.addEventListener("input", (event) => {
-            if (event.target.value.length === 1) {
-                if (index < numInputs.length - 1) {
-                    numInputs[index + 1].focus();
-                }
-            } else if (event.target.value.length === 0 && index > 0) {
-                numInputs[index - 1].focus();
+    
+    $('.num_input').on('input', function () {
+        if ($(this).val().length === 1) {
+            const nextFieldId = $(this).data('next');
+            if (nextFieldId) {
+                $('#' + nextFieldId).focus();
             }
-        });
+        } else if ($(this).val().length === 0) {
+            const previousFieldId = $(this).data('previous');
+            if (previousFieldId) {
+                $('#' + previousFieldId).focus();
+            }
+        }
     });
-
+    
+    $('.num_input').on('keydown', function (e) {
+        if (e.keyCode === 8) {
+            const currentValue = $(this).val();
+            if (currentValue.length === 0) {
+                const previousFieldId = $(this).data('previous');
+                if (previousFieldId) {
+                    $('#' + previousFieldId).val('').focus();
+                }
+            } else {
+                $(this).val('');
+            }
+        }
+    });
+    
+    
     // var errors = validator.errors();
 
     // console.log(errors);
