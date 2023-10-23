@@ -10,11 +10,16 @@ $(document).ready(function () {
                 display: "inline",
                 "margin-top": "10px",
             });
+           
+            
             $("#error_email").text("Please enter a valid email.");
+            
             return false;
         } else {
+           
             $("#error_email").text("");
             $("#error_email").css("display", "none");
+
         }
     });
 
@@ -49,8 +54,23 @@ $(document).ready(function () {
         }
     });
 
-    $("#submit_btn").click(function (e) {
-        
+    $(".otp_submit_btn").click(function (e) {
+       
+
+var num_one=document.getElementById("num_one").value;
+var num_two=document.getElementById("num_two").value;
+var num_three=document.getElementById("num_three").value;
+var num_four=document.getElementById("num_four").value;
+var num_five=document.getElementById("num_five").value;
+var num_six=document.getElementById("num_six").value;
+
+
+
+if(num_one===""||num_two===""||num_three===""||num_four===""||num_five===""||num_six===""){
+    e.preventDefault();
+    // console.log("otp")
+    $(".wrong_otp").text("Please enter a OTP.");
+}
     });
 
     // $("#resendotp").click(function (e) {
