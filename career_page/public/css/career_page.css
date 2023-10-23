@@ -419,6 +419,9 @@ input[type="text"]:focus {
     .Form_section {
         margin-top: 0;
     }
+    .alert.alert-danger, .alert.alert-success{
+        margin-top: 20px;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -462,6 +465,9 @@ input[type="text"]:focus {
     }
     .Form_section {
         margin-top: 0;
+    }
+    .alert.alert-danger, .alert.alert-success{
+        margin-top: 20px;
     }
 }
 
