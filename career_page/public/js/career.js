@@ -18,6 +18,9 @@ $(document).ready(function () {
         }
     });
 
+
+
+
     // $(".email_id").onChange(function(){
     //     $("#error_email").html("Hello <b>world!</b>");
     //   });
@@ -44,6 +47,10 @@ $(document).ready(function () {
         } else {
             $("#exampleModal").css("display", "none");
         }
+    });
+
+    $("#submit_btn").click(function (e) {
+        
     });
 
     // $("#resendotp").click(function (e) {
@@ -137,6 +144,9 @@ $(document).ready(function () {
             // },
         },
     });
+
+
+    
 
     $.validator.addMethod(
         "firstNameRegx",
