@@ -7,27 +7,27 @@ $(document).ready(function () {
 
     let onsubmit = false;
 
-    $(".email_id").on("input", function () {
-        var inputValues = $(this).val();
-        var regex =
-            /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+[.-][a-zA-Z][a-z.A-Z]+$/;
-        if (!regex.test(inputValues)) {
-            $("#error_email").css({
-                display: "inline",
-                "margin-top": "10px",
-            });
+        $(".email_id").on("input", function () {
+            var inputValues = $(this).val();
+            var regex =
+                /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+[.-][a-zA-Z][a-z.A-Z]+$/;
+            if (!regex.test(inputValues)) {
+                $("#error_email").css({
+                    display: "inline",
+                    "margin-top": "10px",
+                });
 
 
-            $("#error_email").text("Please enter a valid email.");
+                $("#error_email").text("Please enter a valid email.");
 
-            return false;
-        } else {
+                return false;
+            } else {
 
-            $("#error_email").text("");
-            $("#error_email").css("display", "none");
+                $("#error_email").text("");
+                $("#error_email").css("display", "none");
 
-        }
-    });
+            }
+        });
 
 
 
@@ -104,8 +104,6 @@ $(document).ready(function () {
         $(this).addClass("notfocussed");
     });
 
-    $("#other_field").css("display", "none")
-
     var validation = jQuery("#enquiryForm").validate({
         rules: {
             first_name: {
@@ -137,9 +135,6 @@ $(document).ready(function () {
             qualification: {
                 required: true,
             },
-            other:{
-                required: true,
-            },
             addition: {
                 required: true,
                 additionRule: "",
@@ -168,9 +163,6 @@ $(document).ready(function () {
             },
             qualification: {
                 required: "Please select qualification",
-            },
-            other: {
-                required: "Please enter your qualification",
             },
             addition: {
                 required: "Please enter captcha",
@@ -236,7 +228,7 @@ $(document).ready(function () {
                 return false;
             }
         },
-        "Please enter valid captcha"
+        "Please enter valid captch"
     );
 
     $(".cancel_btn").click(function () {
@@ -298,18 +290,5 @@ function ShowOptions(answer) {
         $("#other_field-error").css({
             display: "none",
         });
-    }
-}
-function validateFirstDigit(event) {
-    var keyCode = event.keyCode || event.which;
-    var key = String.fromCharCode(keyCode);
-
-    if (/^\d$/.test(key)) {
-        var digit = parseInt(key);
-
-        if (event.target.value.length === 0 && (digit < 7 || digit > 9)) {
-            event.preventDefault();
-            return false;
-        }
     }
 }
