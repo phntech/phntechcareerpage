@@ -135,6 +135,9 @@ $(document).ready(function () {
             qualification: {
                 required: true,
             },
+            other: {
+                required: true,
+            },
             addition: {
                 required: true,
                 additionRule: "",
@@ -163,6 +166,9 @@ $(document).ready(function () {
             },
             qualification: {
                 required: "Please select qualification",
+            },
+            other: {
+                required: "Please enter qualification",
             },
             addition: {
                 required: "Please enter captcha",
