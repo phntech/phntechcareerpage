@@ -16,7 +16,10 @@ $(document).ready(function () {
                     display: "inline",
                     "margin-top": "10px",
                 });
-
+                $("#email")
+                .css({
+                    'cssText':'font-weight:500 !important'
+                });
 
                 $("#error_email").text("Please enter a valid email.");
 
@@ -25,6 +28,12 @@ $(document).ready(function () {
 
                 $("#error_email").text("");
                 $("#error_email").css("display", "none");
+             
+                $("#email")
+                .css({
+                    'cssText':'font-weight:700 !important'
+                });
+
 
             }
         });
@@ -121,7 +130,7 @@ $(document).ready(function () {
             // email: {
             //     required: false,
             //     emailRegx:
-            //     /^$/,
+            //     /^$*/,
             // },
             state: {
                 required: true,
