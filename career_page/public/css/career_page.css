@@ -123,6 +123,8 @@ select {
     line-height: 24px; /* 150% */
 }
 
+
+
 .valid{
 color: #00005C;
 font-family: Poppins;
@@ -133,6 +135,8 @@ line-height: 24px;
 }
 #email{
     margin-bottom: 10px;
+    font-weight: 500 !important;
+   
 }
 .form-control.focussed {
     border-radius: 4px;
